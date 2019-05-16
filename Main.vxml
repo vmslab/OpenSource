@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<vxml:Document xmlns:vxml="http://www.vms-solutions.com/mozart/vxml/2012/1" xmlns:def="definitions" xmlns:ref="references" ContentType="femap" ContentKey="Main" xmlns="Mozart.Task.Execution.Design, Version=2019.115.0.0, Culture=neutral, PublicKeyToken=null" xmlns:csd="clr-namespace:Mozart.SeePlan.Design;assembly:Mozart.SeePlan.Design, Version=2019.115.0.0, Culture=neutral, PublicKeyToken=null" xmlns:css="clr-namespace:Mozart.SeePlan;assembly:Mozart.SeePlan, Version=2019.115.0.0, Culture=neutral, PublicKeyToken=null">
+  <Content>
+    <FMainMap Name="Main">
+      <Config Name="Configuration">
+        <Children Capacity="3">
+          <FConfigEntry Name="SeePlan/Cbsim" />
+          <FConfigEntry Name="SeePlan/FactoryTime">
+            <ConfigValues>
+              <csd:FactoryTimeValues>
+                <TimeInfo>
+                  <css:FactoryTimeInfo StartOffset="08:00:00" ShiftHours="8">
+                    <ShiftNames>
+                      <String-Array>
+                        <String>A</String>
+                        <String>B</String>
+                        <String>C</String>
+                      </String-Array>
+                    </ShiftNames>
+                  </css:FactoryTimeInfo>
+                </TimeInfo>
+              </csd:FactoryTimeValues>
+            </ConfigValues>
+          </FConfigEntry>
+          <FConfigEntry Name="SeePlan/Basic">
+            <ConfigValues>
+              <csd:SeePlanConfigValues LotUnitSize="25" SetupTimeMiniutes="1" MaxLotPlanListCount="-1" TransferTimeMinutes="1" StepTatMinutes="60" BucketCycleTimeMinutes="480" MaxPeggingCount="0" />
+            </ConfigValues>
+          </FConfigEntry>
+        </Children>
+      </Config>
+      <Definitions Capacity="1">
+        <FDefinitionCategory Name="-Predefined-">
+          <Children Capacity="5">
+            <FDefinitionEntry Name="ON_END_MODULE_DEF" def:name="$attr:Name">
+              <ReferenceAction>
+                <FActionEntry Name="OnEndModule" def:name="$attr:Name">
+                  <Children Capacity="1">
+                    <FDefinitionReference>
+                      <Definition ref:name="ON_END_MODULE_DEF" />
+                    </FDefinitionReference>
+                  </Children>
+                </FActionEntry>
+              </ReferenceAction>
+            </FDefinitionEntry>
+            <FDefinitionEntry Name="RUN_DEF" def:name="$attr:Name">
+              <ReferenceAction>
+                <FActionEntry Name="Run" def:name="$attr:Name">
+                  <Children Capacity="1">
+                    <FDefinitionReference>
+                      <Definition ref:name="RUN_DEF" />
+                    </FDefinitionReference>
+                  </Children>
+                </FActionEntry>
+              </ReferenceAction>
+            </FDefinitionEntry>
+            <FDefinitionEntry Name="SETUP_LOG_DEF" def:name="$attr:Name">
+              <ReferenceAction>
+                <FActionEntry Name="SetupLog" def:name="$attr:Name">
+                  <Children Capacity="1">
+                    <FDefinitionReference>
+                      <Definition ref:name="SETUP_LOG_DEF" />
+                    </FDefinitionReference>
+                  </Children>
+                </FActionEntry>
+              </ReferenceAction>
+            </FDefinitionEntry>
+            <FDefinitionEntry Name="SETUP_QUERY_ARGS_DEF" def:name="$attr:Name">
+              <ReferenceAction>
+                <FActionEntry Name="SetupQueryArgs" def:name="$attr:Name">
+                  <Children Capacity="1">
+                    <FDefinitionReference>
+                      <Definition ref:name="SETUP_QUERY_ARGS_DEF" />
+                    </FDefinitionReference>
+                  </Children>
+                </FActionEntry>
+              </ReferenceAction>
+            </FDefinitionEntry>
+            <FDefinitionEntry Name="SETUP_VERSION_DEF" def:name="$attr:Name">
+              <ReferenceAction>
+                <FActionEntry Name="SetupVersion" def:name="$attr:Name">
+                  <Children Capacity="1">
+                    <FDefinitionReference>
+                      <Definition ref:name="SETUP_VERSION_DEF" />
+                    </FDefinitionReference>
+                  </Children>
+                </FActionEntry>
+              </ReferenceAction>
+            </FDefinitionEntry>
+          </Children>
+        </FDefinitionCategory>
+      </Definitions>
+      <Children Capacity="1">
+        <FActionCategory Name="Main">
+          <Children Capacity="1">
+            <FActionComponent Name="Main">
+              <Option />
+              <Children Capacity="15">
+                <FActionEntry ref:name="SetupVersion" />
+                <FActionEntry ref:name="SetupLog" />
+                <FActionEntry ref:name="SetupQueryArgs" />
+                <FActionEntry ref:name="Run" />
+                <FActionEntry ref:name="OnEndModule" />
+              </Children>
+            </FActionComponent>
+          </Children>
+        </FActionCategory>
+      </Children>
+    </FMainMap>
+  </Content>
+</vxml:Document>

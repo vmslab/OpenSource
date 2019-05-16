@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectTypeGuids>{ACF14516-A304-4AE5-93E6-F8E1F03CF242};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{DE200283-2CE4-42C2-B500-08798F64D602}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sample.APS</RootNamespace>
+    <AssemblyName>Sample.APS</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <MozartBaseLibrary>SeePlan.General</MozartBaseLibrary>
+    <MozartProjectPrefix>Sample</MozartProjectPrefix>
+    <MozartLicType>APS</MozartLicType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <StartAction>Program</StartAction>
+    <StartProgram>C:\Program Files (x86)\VMS\Mozart\Bin\APS_Studio.exe</StartProgram>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Mozart.Common">
+      <HintPath>C:\Program Files (x86)\VMS\Mozart\Bin\Mozart.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Mozart.Core">
+      <HintPath>C:\Program Files (x86)\VMS\Mozart\Bin\Mozart.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Mozart.Data">
+      <HintPath>C:\Program Files (x86)\VMS\Mozart\Bin\Mozart.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Mozart.Data.Entity">
+      <HintPath>C:\Program Files (x86)\VMS\Mozart\Bin\Mozart.Data.Entity.dll</HintPath>
+    </Reference>
+    <Reference Include="Mozart.DataActions">
+      <HintPath>C:\Program Files (x86)\VMS\Mozart\Bin\Mozart.DataActions.dll</HintPath>
+    </Reference>
+    <Reference Include="Mozart.Distributions">
+      <HintPath>C:\Program Files (x86)\VMS\Mozart\Bin\Mozart.Distributions.dll</HintPath>
+    </Reference>
+    <Reference Include="Mozart.RuleFlow">
+      <HintPath>C:\Program Files (x86)\VMS\Mozart\Bin\Mozart.RuleFlow.dll</HintPath>
+    </Reference>
+    <Reference Include="Mozart.SeePlan">
+      <HintPath>C:\Program Files (x86)\VMS\Mozart\Bin\Mozart.SeePlan.dll</HintPath>
+    </Reference>
+    <Reference Include="Mozart.Simulation.Engine">
+      <HintPath>C:\Program Files (x86)\VMS\Mozart\Bin\Mozart.Simulation.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="Mozart.Simulation.EnterpriseLibrary">
+      <HintPath>C:\Program Files (x86)\VMS\Mozart\Bin\Mozart.Simulation.EnterpriseLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Mozart.SeePlan.General">
+      <HintPath>C:\Program Files (x86)\VMS\Mozart\Bin\Mozart.SeePlan.General.dll</HintPath>
+    </Reference>
+    <Reference Include="Mozart.Task.Framework">
+      <HintPath>C:\Program Files (x86)\VMS\Mozart\Bin\Mozart.Task.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Mozart.Task.Execution">
+      <HintPath>C:\Program Files (x86)\VMS\Mozart\Bin\Mozart.Task.Execution.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Generated\Main.0.cs" />
+    <Compile Include="Generated\My Objects.0.cs" />
+    <Compile Include="Generated\My Objects.DataModel.cs" />
+    <Compile Include="Generated\My Objects.Inputs.cs" />
+    <Compile Include="Generated\SampleModel.0.cs" />
+    <Compile Include="Generated\SampleModel.Inputs.cs" />
+    <Compile Include="Generated\SampleModel.Outputs.cs" />
+    <Compile Include="Generated\SampleModel.Persists.cs" />
+    <Compile Include="Generated\Simulation.0.cs" />
+    <Compile Include="Logic\PersistInputs.cs" />
+    <Compile Include="Logic\Simulation\BucketControl.cs" />
+    <Compile Include="Logic\Simulation\DispatcherControl.cs" />
+    <Compile Include="Logic\Simulation\EqpInit.cs" />
+    <Compile Include="Logic\Simulation\ProcessControl.cs" />
+    <Compile Include="Logic\Simulation\QueueControl.cs" />
+    <Compile Include="Logic\Simulation\Route.cs" />
+    <Compile Include="Logic\Simulation\SetupControl.cs" />
+    <Compile Include="Logic\Simulation\Weights.cs" />
+    <Compile Include="Logic\Simulation\WipInit.cs" />
+    <Compile Include="Main.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Main.vxml</DependentUpon>
+    </Compile>
+    <Compile Include="My Methods\BOPFunc\SampleGeneralStepFunc.cs" />
+    <Compile Include="My Methods\BOPFunc\SampleProcessFunc.cs" />
+    <Compile Include="My Methods\BOPFunc\SampleProductFunc.cs" />
+    <Compile Include="My Methods\EQUIPMENTFunc\SampleAoEquipmentFunc.cs" />
+    <Compile Include="My Methods\EQUIPMENTFunc\SampleEqpArrangeFunc.cs" />
+    <Compile Include="My Methods\EQUIPMENTFunc\SampleEqpFunc.cs" />
+    <Compile Include="My Methods\Helper\ArrangeHelper.cs" />
+    <Compile Include="My Methods\Helper\BOPHelper.cs" />
+    <Compile Include="My Methods\Helper\EnumHelper.cs" />
+    <Compile Include="My Methods\Helper\ErrorHelper.cs" />
+    <Compile Include="My Methods\Helper\KeyHelper.cs" />
+    <Compile Include="My Methods\Helper\ViewHelper.cs" />
+    <Compile Include="My Methods\WIPFunc\SampleLotFunc.cs" />
+    <Compile Include="My Methods\WIPFunc\SampleWipInfoFunc.cs" />
+    <Compile Include="SampleModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SampleModel.vxml</DependentUpon>
+    </Compile>
+    <Compile Include="Simulation.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Simulation.vxml</DependentUpon>
+    </Compile>
+    <None Include="Main.vxml">
+      <Generator>MozartCode</Generator>
+      <LastGenOutput>Main.cs</LastGenOutput>
+    </None>
+    <Compile Include="My Objects.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>My Objects.vxml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="My Objects.vxml">
+      <Generator>MozartCode</Generator>
+      <LastGenOutput>My Objects.cs</LastGenOutput>
+    </None>
+    <None Include="SampleModel.vxml">
+      <Generator>MozartCode</Generator>
+      <LastGenOutput>SampleModel.cs</LastGenOutput>
+    </None>
+    <None Include="Simulation.vxml">
+      <Generator>MozartCode</Generator>
+      <LastGenOutput>Simulation.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

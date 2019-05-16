@@ -1,0 +1,1129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<vxml:Document xmlns:vxml="http://www.vms-solutions.com/mozart/vxml/2012/1" xmlns:def="definitions" xmlns:ref="references" ContentType="femap" ContentKey="Simulation/Simulation" xmlns="Mozart.Task.Execution.Design, Version=2019.115.0.0, Culture=neutral, PublicKeyToken=null" xmlns:csd="clr-namespace:Mozart.SeePlan.Design.Statistics;assembly:Mozart.SeePlan.Design, Version=2019.115.0.0, Culture=neutral, PublicKeyToken=null" xmlns:csd2="clr-namespace:Mozart.SeePlan.Design;assembly:Mozart.SeePlan.Design, Version=2019.115.0.0, Culture=neutral, PublicKeyToken=null">
+  <Content>
+    <FActionMap Name="Simulation" InstanceName="Simulation">
+      <Definitions Capacity="16">
+        <FDefinitionCategory Name="-Predefined-">
+          <Children Capacity="54">
+            <FDefinitionEntry Name="ADD_BUCKET_MOVE_DEF" def:name="$attr:Name">
+              <ReferenceAction>
+                <FActionEntry Name="AddBucketMove" def:name="$attr:Name">
+                  <Children Capacity="1">
+                    <FDefinitionReference>
+                      <Definition ref:name="ADD_BUCKET_MOVE_DEF" />
+                    </FDefinitionReference>
+                  </Children>
+                </FActionEntry>
+              </ReferenceAction>
+            </FDefinitionEntry>
+            <FDefinitionEntry Name="ADD_DISPATCH_WIP_LOG_DEF" def:name="$attr:Name">
+              <ReferenceAction>
+                <FActionEntry Name="AddDispatchWipLog" def:name="$attr:Name">
+                  <Children Capacity="1">
+                    <FDefinitionReference>
+                      <Definition ref:name="ADD_DISPATCH_WIP_LOG_DEF" />
+                    </FDefinitionReference>
+                  </Children>
+                </FActionEntry>
+              </ReferenceAction>
+            </FDefinitionEntry>
+            <FDefinitionEntry Name="ADD_WORK_LOT_DEF" def:name="$attr:Name">
+              <ReferenceAction>
+                <FActionEntry Name="AddWorkLot" def:name="$attr:Name">
+                  <Children Capacity="1">
+                    <FDefinitionReference>
+                      <Definition ref:name="ADD_WORK_LOT_DEF" />
+                    </FDefinitionReference>
+                  </Children>
+                </FActionEntry>
+              </ReferenceAction>
+            </FDefinitionEntry>
+            <FDefinitionEntry Name="ATTACH_TOOL_DEF" def:name="$attr:Name">
+              <ReferenceAction>
+                <FActionEntry Name="AttachTool" def:name="$attr:Name">
+                  <Children Capacity="1">
+                    <FDefinitionReference>
+                      <Definition ref:name="ATTACH_TOOL_DEF" />
+                    </FDefinitionReference>
+                  </Children>
+                </FActionEntry>
+              </ReferenceAction>
+            </FDefinitionEntry>
+            <FDefinitionEntry Name="BUCKET_ROLLING_DEF" def:name="$attr:Name">
+              <ReferenceAction>
+                <FActionEntry Name="BucketRolling" def:name="$attr:Name">
+                  <Children Capacity="1">
+                    <FDefinitionReference>
+                      <Definition ref:name="BUCKET_ROLLING_DEF" />
+                    </FDefinitionReference>
+                  </Children>
+                </FActionEntry>
+              </ReferenceAction>
+            </FDefinitionEntry>
+            <FDefinitionEntry Name="CAN_UP_DEF" def:name="$attr:Name">
+              <ReferenceAction>
+                <FActionEntry Name="CanUp" def:name="$attr:Name">
+                  <Children Capacity="1">
+                    <FDefinitionReference>
+                      <Definition ref:name="CAN_UP_DEF" />
+                    </FDefinitionReference>
+                  </Children>
+                </FActionEntry>
+              </ReferenceAction>
+            </FDefinitionEntry>
+            <FDefinitionEntry Name="COMPARE_LOT_DEF" def:name="$attr:Name">
+              <ReferenceAction>
+                <FActionEntry Name="CompareLot" def:name="$attr:Name">
+                  <Children Capacity="1">
+                    <FDefinitionReference>
+                      <Definition ref:name="COMPARE_LOT_DEF" />
+                    </FDefinitionReference>
+                  </Children>
+                </FActionEntry>
+              </ReferenceAction>
+            </FDefinitionEntry>
+            <FDefinitionEntry Name="COMPARE_PROFILE_EQP_DEF" def:name="$attr:Name">
+              <ReferenceAction>
+                <FActionEntry Name="CompareProfileEqp" def:name="$attr:Name">
+                  <Children Capacity="1">
+                    <FDefinitionReference>
+                      <Definition ref:name="COMPARE_PROFILE_EQP_DEF" />
+                    </FDefinitionReference>
+                  </Children>
+                </FActionEntry>
+              </ReferenceAction>
+            </FDefinitionEntry>
+            <FDefinitionEntry Name="COMPARE_UP_STEP_PRIORITY_DEF" def:name="$attr:Name">
+              <ReferenceAction>
+                <FActionEntry Name="CompareUpStep" def:name="$attr:Name">
+                  <Children Capacity="1">
+                    <FDefinitionReference>
+                      <Definition ref:name="COMPARE_UP_STEP_PRIORITY_DEF" />
+                    </FDefinitionReference>
+                  </Children>
+                </FActionEntry>
+              </ReferenceAction>
+            </FDefinitionEntry>
+            <FDefinitionEntry Name="COMPARE_WIP_DEF" def:name="$attr:Name">
+              <ReferenceAction>
+                <FActionEntry Name="CompareWip" def:name="$attr:Name">
+                  <Children Capacity="1">
+                    <FDefinitionReference>
+                      <Definition ref:name="COMPARE_WIP_DEF" />
+                    </FDefinitionReference>
+                  </Children>
+                </FActionEntry>
+              </ReferenceAction>
+            </FDefinitionEntry>
+            <FDefinitionEntry Name="CREATE_DUMMY_WORK_LOT_DEF" def:name="$attr:Name">
+              <ReferenceAction>
+                <FActionEntry Name="CreateDummyWorkLot" def:name="$attr:Name">
+                  <Children Capacity="1">
+                    <FDefinitionReference>
+                      <Definition ref:name="CREATE_DUMMY_WORK_LOT_DEF" />
+                    </FDefinitionReference>
+                  </Children>
+                </FActionEntry>
+              </ReferenceAction>
+            </FDefinitionEntry>
+            <FDefinitionEntry Name="DETACH_TOOL_DEF" def:name="$attr:Name">
+              <ReferenceAction>
+                <FActionEntry Name="DetachTool" def:name="$attr:Name">
+                  <Children Capacity="1">
+                    <FDefinitionReference>
+                      <Definition ref:name="DETACH_TOOL_DEF" />
+                    </FDefinitionReference>
+                  </Children>
+                </FActionEntry>
+              </ReferenceAction>
+            </FDefinitionEntry>
+            <FDefinitionEntry Name="DO_FILTER_DEF" def:name="$attr:Name">
+              <ReferenceAction>
+                <FActionEntry Name="DoFilter" def:name="$attr:Name">
+                  <Children Capacity="1">
+                    <FDefinitionReference>
+                      <Definition ref:name="DO_FILTER_DEF" />
+                    </FDefinitionReference>
+                  </Children>
+                </FActionEntry>
+              </ReferenceAction>
+            </FDefinitionEntry>
+            <FDefinitionEntry Name="DO_RESERVE_DEF" def:name="$attr:Name">
+              <ReferenceAction>
+                <FActionEntry Name="DoReserve" def:name="$attr:Name">
+                  <Children Capacity="1">
+                    <FDefinitionReference>
+                      <Definition ref:name="DO_RESERVE_DEF" />
+                    </FDefinitionReference>
+                  </Children>
+                </FActionEntry>
+              </ReferenceAction>
+            </FDefinitionEntry>
+            <FDefinitionEntry Name="FIX_BATCH_DEF" def:name="$attr:Name">
+              <ReferenceAction>
+                <FActionEntry Name="FixBatch" def:name="$attr:Name">
+                  <Children Capacity="1">
+                    <FDefinitionReference>
+                      <Definition ref:name="FIX_BATCH_DEF" />
+                    </FDefinitionReference>
+                  </Children>
+                </FActionEntry>
+              </ReferenceAction>
+            </FDefinitionEntry>
+            <FDefinitionEntry Name="FIX_START_TIME_DEF" def:name="$attr:Name">
+              <ReferenceAction>
+                <FActionEntry Name="FixStartTime" def:name="$attr:Name">
+                  <Children Capacity="1">
+                    <FDefinitionReference>
+                      <Definition ref:name="FIX_START_TIME_DEF" />
+                    </FDefinitionReference>
+                  </Children>
+                </FActionEntry>
+              </ReferenceAction>
+            </FDefinitionEntry>
+            <FDefinitionEntry Name="GET_BUCKET_INPUT_DELAY_DEF" def:name="$attr:Name">
+              <ReferenceAction>
+                <FActionEntry Name="GetBucketInputDelay" def:name="$attr:Name">
+                  <Children Capacity="1">
+                    <FDefinitionReference>
+                      <Definition ref:name="GET_BUCKET_INPUT_DELAY_DEF" />
+                    </FDefinitionReference>
+                  </Children>
+                </FActionEntry>
+              </ReferenceAction>
+            </FDefinitionEntry>
+            <FDefinitionEntry Name="GET_DISPATCHER_TYPE_DEF" def:name="$attr:Name">
+              <ReferenceAction>
+                <FActionEntry Name="GetDispatcherType" Order="2" def:name="$attr:Name">
+                  <Children Capacity="1">
+                    <FDefinitionReference>
+                      <Definition ref:name="GET_DISPATCHER_TYPE_DEF" />
+                    </FDefinitionReference>
+                  </Children>
+                </FActionEntry>
+              </ReferenceAction>
+            </FDefinitionEntry>
+            <FDefinitionEntry Name="GET_EQP_SIM_TYPE_DEF" def:name="$attr:Name">
+              <ReferenceAction>
+                <FActionEntry Name="GetEqpSimType" Order="3" def:name="$attr:Name">
+                  <Children Capacity="1">
+                    <FDefinitionReference>
+                      <Definition ref:name="GET_EQP_SIM_TYPE_DEF" />
+                    </FDefinitionReference>
+                  </Children>
+                </FActionEntry>
+              </ReferenceAction>
+            </FDefinitionEntry>
+            <FDefinitionEntry Name="GET_LAST_TOOL_SETTINGS_DEF" def:name="$attr:Name">
+              <ReferenceAction>
+                <FActionEntry Name="GetLastToolSettings" def:name="$attr:Name">
+                  <Children Capacity="1">
+                    <FDefinitionReference>
+                      <Definition ref:name="GET_LAST_TOOL_SETTINGS_DEF" />
+                    </FDefinitionReference>
+                  </Children>
+                </FActionEntry>
+              </ReferenceAction>
+            </FDefinitionEntry>
+            <FDefinitionEntry Name="GET_LOADABLE_CHAMBERS_DEF" def:name="$attr:Name">
+              <ReferenceAction>
+                <FActionEntry Name="GetLoadableChambers" def:name="$attr:Name">
+                  <Children Capacity="1">
+                    <FDefinitionReference>
+                      <Definition ref:name="GET_LOADABLE_CHAMBERS_DEF" />
+                    </FDefinitionReference>
+                  </Children>
+                </FActionEntry>
+              </ReferenceAction>
+            </FDefinitionEntry>
+            <FDefinitionEntry Name="GET_NEXT_STEP_DEF" def:name="$attr:Name">
+              <ReferenceAction>
+                <FActionEntry Name="GetNextStep" def:name="$attr:Name">
+                  <Children Capacity="1">
+                    <FDefinitionReference>
+                      <Definition ref:name="GET_NEXT_STEP_DEF" />
+                    </FDefinitionReference>
+                  </Children>
+                </FActionEntry>
+              </ReferenceAction>
+            </FDefinitionEntry>
+            <FDefinitionEntry Name="GET_PROCESS_UNIT_SIZE_DEF" def:name="$attr:Name">
+              <ReferenceAction>
+                <FActionEntry Name="GetProcessUnitSize" def:name="$attr:Name">
+                  <Children Capacity="1">
+                    <FDefinitionReference>
+                      <Definition ref:name="GET_PROCESS_UNIT_SIZE_DEF" />
+                    </FDefinitionReference>
+                  </Children>
+                </FActionEntry>
+              </ReferenceAction>
+            </FDefinitionEntry>
+            <FDefinitionEntry Name="GET_SELECTED_WIP_LOG_DEF" def:name="$attr:Name">
+              <ReferenceAction>
+                <FActionEntry Name="GetSelectedWipLog" def:name="$attr:Name">
+                  <Children Capacity="1">
+                    <FDefinitionReference>
+                      <Definition ref:name="GET_SELECTED_WIP_LOG_DEF" />
+                    </FDefinitionReference>
+                  </Children>
+                </FActionEntry>
+              </ReferenceAction>
+            </FDefinitionEntry>
+            <FDefinitionEntry Name="GET_SETUP_CREW_KEY_DEF" def:name="$attr:Name">
+              <ReferenceAction>
+                <FActionEntry Name="GetSetupCrewKey" def:name="$attr:Name">
+                  <Children Capacity="1">
+                    <FDefinitionReference>
+                      <Definition ref:name="GET_SETUP_CREW_KEY_DEF" />
+                    </FDefinitionReference>
+                  </Children>
+                </FActionEntry>
+              </ReferenceAction>
+            </FDefinitionEntry>
+            <FDefinitionEntry Name="GET_TRANSFER_TIME_DEF" def:name="$attr:Name">
+              <ReferenceAction>
+                <FActionEntry Name="GetTransferTime" def:name="$attr:Name">
+                  <Children Capacity="1">
+                    <FDefinitionReference>
+                      <Definition ref:name="GET_TRANSFER_TIME_DEF" />
+                    </FDefinitionReference>
+                  </Children>
+                </FActionEntry>
+              </ReferenceAction>
+            </FDefinitionEntry>
+            <FDefinitionEntry Name="INITIALIZE_WORK_MANAGER_DEF" def:name="$attr:Name">
+              <ReferenceAction>
+                <FActionEntry Name="InitializeWorkManager" def:name="$attr:Name">
+                  <Children Capacity="1">
+                    <FDefinitionReference>
+                      <Definition ref:name="INITIALIZE_WORK_MANAGER_DEF" />
+                    </FDefinitionReference>
+                  </Children>
+                </FActionEntry>
+              </ReferenceAction>
+            </FDefinitionEntry>
+            <FDefinitionEntry Name="INITIALIZE_WORK_STEP_DEF" def:name="$attr:Name">
+              <ReferenceAction>
+                <FActionEntry Name="InitializeWorkStep" def:name="$attr:Name">
+                  <Children Capacity="1">
+                    <FDefinitionReference>
+                      <Definition ref:name="INITIALIZE_WORK_STEP_DEF" />
+                    </FDefinitionReference>
+                  </Children>
+                </FActionEntry>
+              </ReferenceAction>
+            </FDefinitionEntry>
+            <FDefinitionEntry Name="IS_DONE_DEF" def:name="$attr:Name">
+              <ReferenceAction>
+                <FActionEntry Name="IsDone" def:name="$attr:Name">
+                  <Children Capacity="1">
+                    <FDefinitionReference>
+                      <Definition ref:name="IS_DONE_DEF" />
+                    </FDefinitionReference>
+                  </Children>
+                </FActionEntry>
+              </ReferenceAction>
+            </FDefinitionEntry>
+            <FDefinitionEntry Name="IS_NEED_DOWN_STEP_DEF" def:name="$attr:Name">
+              <ReferenceAction>
+                <FActionEntry Name="IsNeedDownStep" def:name="$attr:Name">
+                  <Children Capacity="1">
+                    <FDefinitionReference>
+                      <Definition ref:name="IS_NEED_DOWN_STEP_DEF" />
+                    </FDefinitionReference>
+                  </Children>
+                </FActionEntry>
+              </ReferenceAction>
+            </FDefinitionEntry>
+            <FDefinitionEntry Name="IS_NEED_UP_STEP_DEF" def:name="$attr:Name">
+              <ReferenceAction>
+                <FActionEntry Name="IsNeedUpStep" def:name="$attr:Name">
+                  <Children Capacity="1">
+                    <FDefinitionReference>
+                      <Definition ref:name="IS_NEED_UP_STEP_DEF" />
+                    </FDefinitionReference>
+                  </Children>
+                </FActionEntry>
+              </ReferenceAction>
+            </FDefinitionEntry>
+            <FDefinitionEntry Name="IS_READY_TOOL_DEF" def:name="$attr:Name">
+              <ReferenceAction>
+                <FActionEntry Name="IsReadyTool" def:name="$attr:Name">
+                  <Children Capacity="1">
+                    <FDefinitionReference>
+                      <Definition ref:name="IS_READY_TOOL_DEF" />
+                    </FDefinitionReference>
+                  </Children>
+                </FActionEntry>
+              </ReferenceAction>
+            </FDefinitionEntry>
+            <FDefinitionEntry Name="IS_VALID_TOOL_INFO_DEF" def:name="$attr:Name">
+              <ReferenceAction>
+                <FActionEntry Name="IsValidToolInfo" def:name="$attr:Name">
+                  <Children Capacity="1">
+                    <FDefinitionReference>
+                      <Definition ref:name="IS_VALID_TOOL_INFO_DEF" />
+                    </FDefinitionReference>
+                  </Children>
+                </FActionEntry>
+              </ReferenceAction>
+            </FDefinitionEntry>
+            <FDefinitionEntry Name="IsBatchType" def:name="$attr:Name">
+              <ReferenceAction>
+                <FActionEntry Name="IsBatchType" def:name="IsBatchType1">
+                  <Children Capacity="1">
+                    <FDefinitionReference>
+                      <Definition ref:name="IsBatchType" />
+                    </FDefinitionReference>
+                  </Children>
+                </FActionEntry>
+              </ReferenceAction>
+            </FDefinitionEntry>
+            <FDefinitionEntry Name="LOCATE_FOR_DISPATCH_DEF" def:name="$attr:Name">
+              <ReferenceAction>
+                <FActionEntry Name="LocateForDispatch" def:name="$attr:Name">
+                  <Children Capacity="1">
+                    <FDefinitionReference>
+                      <Definition ref:name="LOCATE_FOR_DISPATCH_DEF" />
+                    </FDefinitionReference>
+                  </Children>
+                </FActionEntry>
+              </ReferenceAction>
+            </FDefinitionEntry>
+            <FDefinitionEntry Name="MODIFY_DOWN_SCHEDULE_DEF" def:name="$attr:Name">
+              <ReferenceAction>
+                <FActionEntry Name="OnEntered" def:name="$attr:Name">
+                  <Children Capacity="1">
+                    <FDefinitionReference>
+                      <Definition ref:name="MODIFY_DOWN_SCHEDULE_DEF" />
+                    </FDefinitionReference>
+                  </Children>
+                </FActionEntry>
+              </ReferenceAction>
+            </FDefinitionEntry>
+            <FDefinitionEntry Name="ON_DELIVERED_DEF" def:name="$attr:Name">
+              <ReferenceAction>
+                <FActionEntry Name="OnDelivered" def:name="$attr:Name">
+                  <Children Capacity="1">
+                    <FDefinitionReference>
+                      <Definition ref:name="ON_DELIVERED_DEF" />
+                    </FDefinitionReference>
+                  </Children>
+                </FActionEntry>
+              </ReferenceAction>
+            </FDefinitionEntry>
+            <FDefinitionEntry Name="ON_FAILURE_EVENT_DEF" def:name="$attr:Name">
+              <ReferenceAction>
+                <FActionEntry Name="OnFailureEvent" def:name="$attr:Name">
+                  <Children Capacity="1">
+                    <FDefinitionReference>
+                      <Definition ref:name="ON_FAILURE_EVENT_DEF" />
+                    </FDefinitionReference>
+                  </Children>
+                </FActionEntry>
+              </ReferenceAction>
+            </FDefinitionEntry>
+            <FDefinitionEntry Name="ON_PM_EVENT_DEF" def:name="$attr:Name">
+              <ReferenceAction>
+                <FActionEntry Name="OnPMEvent" def:name="$attr:Name">
+                  <Children Capacity="3">
+                    <FDefinitionReference>
+                      <Definition>
+                        <FDefinitionEntry Name="PM_PREVENT_LOADING_DEF" def:name="$attr:Name">
+                          <ReferenceAction ref:name="OnPMEvent" />
+                        </FDefinitionEntry>
+                      </Definition>
+                    </FDefinitionReference>
+                    <FDefinitionReference>
+                      <Definition>
+                        <FDefinitionEntry Name="PM_PREVENT_PROCESSING_DEF" def:name="$attr:Name">
+                          <ReferenceAction ref:name="OnPMEvent" />
+                        </FDefinitionEntry>
+                      </Definition>
+                    </FDefinitionReference>
+                    <FDefinitionReference>
+                      <Definition ref:name="ON_PM_EVENT_DEF" />
+                    </FDefinitionReference>
+                  </Children>
+                </FActionEntry>
+              </ReferenceAction>
+            </FDefinitionEntry>
+            <FDefinitionEntry ref:name="PM_PREVENT_LOADING_DEF" />
+            <FDefinitionEntry ref:name="PM_PREVENT_PROCESSING_DEF" />
+            <FDefinitionEntry Name="RESERVE_ONE_DEF" def:name="$attr:Name">
+              <ReferenceAction>
+                <FActionEntry Name="ReserveOne" def:name="$attr:Name">
+                  <Children Capacity="1">
+                    <FDefinitionReference>
+                      <Definition ref:name="RESERVE_ONE_DEF" />
+                    </FDefinitionReference>
+                  </Children>
+                </FActionEntry>
+              </ReferenceAction>
+            </FDefinitionEntry>
+            <FDefinitionEntry Name="SELECT_ASSIGN_EQP_DEF" def:name="$attr:Name">
+              <ReferenceAction>
+                <FActionEntry Name="SelectAssignEqp" def:name="$attr:Name">
+                  <Children Capacity="1">
+                    <FDefinitionReference>
+                      <Definition ref:name="SELECT_ASSIGN_EQP_DEF" />
+                    </FDefinitionReference>
+                  </Children>
+                </FActionEntry>
+              </ReferenceAction>
+            </FDefinitionEntry>
+            <FDefinitionEntry Name="SELECT_DOWN_EQP_DEF" def:name="$attr:Name">
+              <ReferenceAction>
+                <FActionEntry Name="SelectDownEqp" def:name="SelectDownEqp1">
+                  <Children Capacity="1">
+                    <FDefinitionReference>
+                      <Definition ref:name="SELECT_DOWN_EQP_DEF" />
+                    </FDefinitionReference>
+                  </Children>
+                </FActionEntry>
+              </ReferenceAction>
+            </FDefinitionEntry>
+            <FDefinitionEntry Name="SELECT_DOWN_EQP_T_DEF" def:name="$attr:Name">
+              <ReferenceAction>
+                <FActionEntry Name="SelectDownEqp" def:name="$attr:Name">
+                  <Children Capacity="1">
+                    <FDefinitionReference>
+                      <Definition ref:name="SELECT_DOWN_EQP_T_DEF" />
+                    </FDefinitionReference>
+                  </Children>
+                </FActionEntry>
+              </ReferenceAction>
+            </FDefinitionEntry>
+            <FDefinitionEntry Name="SELECT_PROFILE_EQP_DEF" def:name="$attr:Name">
+              <ReferenceAction>
+                <FActionEntry Name="SelectProfileEqp" def:name="$attr:Name">
+                  <Children Capacity="1">
+                    <FDefinitionReference>
+                      <Definition ref:name="SELECT_PROFILE_EQP_DEF" />
+                    </FDefinitionReference>
+                  </Children>
+                </FActionEntry>
+              </ReferenceAction>
+            </FDefinitionEntry>
+            <FDefinitionEntry Name="SELECT_UP_STEP_DEF" def:name="$attr:Name">
+              <ReferenceAction>
+                <FActionEntry Name="SelectUpStep" def:name="$attr:Name">
+                  <Children Capacity="1">
+                    <FDefinitionReference>
+                      <Definition ref:name="SELECT_UP_STEP_DEF" />
+                    </FDefinitionReference>
+                  </Children>
+                </FActionEntry>
+              </ReferenceAction>
+            </FDefinitionEntry>
+            <FDefinitionEntry Name="SET_LAST_LOADING_INFO_DEF" def:name="$attr:Name">
+              <ReferenceAction>
+                <FActionEntry Name="SetLastLoadingInfo" def:name="$attr:Name">
+                  <Children Capacity="1">
+                    <FDefinitionReference>
+                      <Definition ref:name="SET_LAST_LOADING_INFO_DEF" />
+                    </FDefinitionReference>
+                  </Children>
+                </FActionEntry>
+              </ReferenceAction>
+            </FDefinitionEntry>
+            <FDefinitionEntry Name="SORT_LOT_GROUP_CONTENTS_DEF" def:name="$attr:Name">
+              <ReferenceAction>
+                <FActionEntry Name="SortLotGroupContents" Order="8" def:name="$attr:Name">
+                  <Children Capacity="1">
+                    <FDefinitionReference>
+                      <Definition ref:name="SORT_LOT_GROUP_CONTENTS_DEF" />
+                    </FDefinitionReference>
+                  </Children>
+                </FActionEntry>
+              </ReferenceAction>
+            </FDefinitionEntry>
+            <FDefinitionEntry Name="SORT_PROFILE_LOT_DEF" def:name="$attr:Name">
+              <ReferenceAction>
+                <FActionEntry Name="SortProfileLot" def:name="$attr:Name">
+                  <Children Capacity="1">
+                    <FDefinitionReference>
+                      <Definition ref:name="SORT_PROFILE_LOT_DEF" />
+                    </FDefinitionReference>
+                  </Children>
+                </FActionEntry>
+              </ReferenceAction>
+            </FDefinitionEntry>
+          </Children>
+        </FDefinitionCategory>
+        <FDefinitionCategory Name="EqpInit">
+          <Children Capacity="4">
+            <FDefinitionEntry Name="GET_EQP_LIST0" def:name="$attr:Name">
+              <Code>
+                <CodeInfo Path="Logic\Simulation\EqpInit" NamespaceName="Sample.APS.Logic.Simulation" ClassName="EqpInit" MethodName="GET_EQP_LIST0" />
+              </Code>
+              <ReferenceAction>
+                <FActionEntry Name="GetEqpList" Order="1" def:name="$attr:Name">
+                  <Children Capacity="4">
+                    <FDefinitionReference>
+                      <Definition ref:name="GET_EQP_LIST0" />
+                    </FDefinitionReference>
+                  </Children>
+                </FActionEntry>
+              </ReferenceAction>
+            </FDefinitionEntry>
+          </Children>
+        </FDefinitionCategory>
+        <FDefinitionCategory Name="ProcessControl">
+          <Children Capacity="4">
+            <FDefinitionEntry Name="GET_PROCESS_TIME0" def:name="$attr:Name">
+              <Code>
+                <CodeInfo Path="Logic\Simulation\ProcessControl" NamespaceName="Sample.APS.Logic.Simulation" ClassName="ProcessControl" MethodName="GET_PROCESS_TIME0" />
+              </Code>
+              <ReferenceAction>
+                <FActionEntry Name="GetProcessTime" def:name="$attr:Name">
+                  <Children Capacity="4">
+                    <FDefinitionReference>
+                      <Definition ref:name="GET_PROCESS_TIME0" />
+                    </FDefinitionReference>
+                  </Children>
+                </FActionEntry>
+              </ReferenceAction>
+            </FDefinitionEntry>
+            <FDefinitionEntry Name="IS_NEED_SETUP0" def:name="$attr:Name" Description="">
+              <Code>
+                <CodeInfo Path="Logic\Simulation\ProcessControl" NamespaceName="Sample.APS.Logic.Simulation" ClassName="ProcessControl" MethodName="IS_NEED_SETUP0" />
+              </Code>
+              <ReferenceAction>
+                <FActionEntry Name="IsNeedSetup" def:name="$attr:Name">
+                  <Children Capacity="4">
+                    <FDefinitionReference>
+                      <Definition ref:name="IS_NEED_SETUP0" />
+                    </FDefinitionReference>
+                  </Children>
+                </FActionEntry>
+              </ReferenceAction>
+            </FDefinitionEntry>
+          </Children>
+        </FDefinitionCategory>
+        <FDefinitionCategory Name="Route">
+          <Children Capacity="4">
+            <FDefinitionEntry Name="CREATE_LOAD_INFO0" def:name="$attr:Name">
+              <Code>
+                <CodeInfo Path="Logic\Simulation\Route" NamespaceName="Sample.APS.Logic.Simulation" ClassName="Route" MethodName="CREATE_LOAD_INFO0" />
+              </Code>
+              <ReferenceAction>
+                <FActionEntry Name="CreateLoadInfo" def:name="$attr:Name">
+                  <Children Capacity="4">
+                    <FDefinitionReference>
+                      <Definition ref:name="CREATE_LOAD_INFO0" />
+                    </FDefinitionReference>
+                  </Children>
+                </FActionEntry>
+              </ReferenceAction>
+            </FDefinitionEntry>
+            <FDefinitionEntry Name="GET_LOADABLE_EQP_LIST0" def:name="$attr:Name">
+              <Code>
+                <CodeInfo Path="Logic\Simulation\Route" NamespaceName="Sample.APS.Logic.Simulation" ClassName="Route" MethodName="GET_LOADABLE_EQP_LIST0" />
+              </Code>
+              <ReferenceAction>
+                <FActionEntry Name="GetLoadableEqpList" def:name="$attr:Name">
+                  <Children Capacity="4">
+                    <FDefinitionReference>
+                      <Definition ref:name="GET_LOADABLE_EQP_LIST0" />
+                    </FDefinitionReference>
+                  </Children>
+                </FActionEntry>
+              </ReferenceAction>
+            </FDefinitionEntry>
+          </Children>
+        </FDefinitionCategory>
+        <FDefinitionCategory Name="WipInit">
+          <Children Capacity="4">
+            <FDefinitionEntry Name="GET_LOADING_EQUIPMENT0" def:name="$attr:Name">
+              <Code>
+                <CodeInfo Path="Logic\Simulation\WipInit" NamespaceName="Sample.APS.Logic.Simulation" ClassName="WipInit" MethodName="GET_LOADING_EQUIPMENT0" />
+              </Code>
+              <ReferenceAction>
+                <FActionEntry Name="GetLoadingEquipment" def:name="$attr:Name">
+                  <Children Capacity="4">
+                    <FDefinitionReference>
+                      <Definition ref:name="GET_LOADING_EQUIPMENT0" />
+                    </FDefinitionReference>
+                  </Children>
+                </FActionEntry>
+              </ReferenceAction>
+            </FDefinitionEntry>
+            <FDefinitionEntry Name="GET_WIPS0" def:name="$attr:Name">
+              <Code>
+                <CodeInfo Path="Logic\Simulation\WipInit" NamespaceName="Sample.APS.Logic.Simulation" ClassName="WipInit" MethodName="GET_WIPS0" />
+              </Code>
+              <ReferenceAction>
+                <FActionEntry Name="GetWips" def:name="$attr:Name">
+                  <Children Capacity="4">
+                    <FDefinitionReference>
+                      <Definition ref:name="GET_WIPS0" />
+                    </FDefinitionReference>
+                  </Children>
+                </FActionEntry>
+              </ReferenceAction>
+            </FDefinitionEntry>
+            <FDefinitionEntry Name="LOCATE_FOR_RUN1" def:name="$attr:Name">
+              <Code>
+                <CodeInfo Path="Logic\Simulation\WipInit" NamespaceName="Sample.APS.Logic.Simulation" ClassName="WipInit" MethodName="LOCATE_FOR_RUN1" />
+              </Code>
+              <ReferenceAction>
+                <FActionEntry Name="LocateForRun" def:name="$attr:Name">
+                  <Children Capacity="1">
+                    <FDefinitionReference>
+                      <Definition ref:name="LOCATE_FOR_RUN1" />
+                    </FDefinitionReference>
+                  </Children>
+                </FActionEntry>
+              </ReferenceAction>
+            </FDefinitionEntry>
+          </Children>
+        </FDefinitionCategory>
+        <FDefinitionCategory Name="QueueControl">
+          <Children Capacity="4">
+            <FDefinitionEntry Name="ON_NOT_FOUND_DESTINATION0" def:name="$attr:Name">
+              <Code>
+                <CodeInfo Path="Logic\Simulation\QueueControl" NamespaceName="Sample.APS.Logic.Simulation" ClassName="QueueControl" MethodName="ON_NOT_FOUND_DESTINATION0" />
+              </Code>
+              <ReferenceAction>
+                <FActionEntry Name="OnNotFoundDestination" Order="7" def:name="$attr:Name">
+                  <Children Capacity="4">
+                    <FDefinitionReference>
+                      <Definition ref:name="ON_NOT_FOUND_DESTINATION0" />
+                    </FDefinitionReference>
+                  </Children>
+                </FActionEntry>
+              </ReferenceAction>
+            </FDefinitionEntry>
+          </Children>
+        </FDefinitionCategory>
+        <FDefinitionCategory Name="DispatcherControl">
+          <Children Capacity="8">
+            <FDefinitionEntry Name="DO_SELECT1" def:name="$attr:Name">
+              <Code>
+                <CodeInfo Path="Logic\Simulation\DispatcherControl" NamespaceName="Sample.APS.Logic.Simulation" ClassName="DispatcherControl" MethodName="DO_SELECT1" />
+              </Code>
+              <ReferenceAction>
+                <FActionEntry Name="DoSelect" Order="3" def:name="$attr:Name">
+                  <Children Capacity="1">
+                    <FDefinitionReference>
+                      <Definition ref:name="DO_SELECT1" />
+                    </FDefinitionReference>
+                  </Children>
+                </FActionEntry>
+              </ReferenceAction>
+            </FDefinitionEntry>
+            <FDefinitionEntry Name="EVALUATE1" def:name="$attr:Name">
+              <Code>
+                <CodeInfo Path="Logic\Simulation\DispatcherControl" NamespaceName="Sample.APS.Logic.Simulation" ClassName="DispatcherControl" MethodName="EVALUATE1" />
+              </Code>
+              <ReferenceAction>
+                <FActionEntry Name="Evaluate" def:name="$attr:Name">
+                  <Children Capacity="1">
+                    <FDefinitionReference>
+                      <Definition ref:name="EVALUATE1" />
+                    </FDefinitionReference>
+                  </Children>
+                </FActionEntry>
+              </ReferenceAction>
+            </FDefinitionEntry>
+            <FDefinitionEntry Name="GET_LOT_BATCH_TYPE0" def:name="$attr:Name">
+              <Code>
+                <CodeInfo Path="Logic\Simulation\DispatcherControl" NamespaceName="Sample.APS.Logic.Simulation" ClassName="DispatcherControl" MethodName="GET_LOT_BATCH_TYPE0" />
+              </Code>
+              <ReferenceAction>
+                <FActionEntry Name="GetLotBatchType" def:name="$attr:Name">
+                  <Children Capacity="4">
+                    <FDefinitionReference>
+                      <Definition ref:name="GET_LOT_BATCH_TYPE0" />
+                    </FDefinitionReference>
+                  </Children>
+                </FActionEntry>
+              </ReferenceAction>
+            </FDefinitionEntry>
+            <FDefinitionEntry Name="ON_DISPATCH0" def:name="$attr:Name">
+              <Code>
+                <CodeInfo Path="Logic\Simulation\DispatcherControl" NamespaceName="Sample.APS.Logic.Simulation" ClassName="DispatcherControl" MethodName="ON_DISPATCH0" />
+              </Code>
+              <ReferenceAction>
+                <FActionEntry Name="OnDispatch" Order="2" def:name="$attr:Name">
+                  <Children Capacity="4">
+                    <FDefinitionReference>
+                      <Definition ref:name="ON_DISPATCH0" />
+                    </FDefinitionReference>
+                  </Children>
+                </FActionEntry>
+              </ReferenceAction>
+            </FDefinitionEntry>
+            <FDefinitionEntry Name="SELECT1" def:name="$attr:Name">
+              <Code>
+                <CodeInfo Path="Logic\Simulation\DispatcherControl" NamespaceName="Sample.APS.Logic.Simulation" ClassName="DispatcherControl" MethodName="SELECT1" />
+              </Code>
+              <ReferenceAction>
+                <FActionEntry Name="Select" def:name="$attr:Name">
+                  <Children Capacity="1">
+                    <FDefinitionReference>
+                      <Definition ref:name="SELECT1" />
+                    </FDefinitionReference>
+                  </Children>
+                </FActionEntry>
+              </ReferenceAction>
+            </FDefinitionEntry>
+            <FDefinitionEntry Name="UPDATE_CONTEXT0" def:name="$attr:Name">
+              <Code>
+                <CodeInfo Path="Logic\Simulation\DispatcherControl" NamespaceName="Sample.APS.Logic.Simulation" ClassName="DispatcherControl" MethodName="UPDATE_CONTEXT0" />
+              </Code>
+              <ReferenceAction>
+                <FActionEntry Name="UpdateContext" Order="1" def:name="$attr:Name">
+                  <Children Capacity="4">
+                    <FDefinitionReference>
+                      <Definition ref:name="UPDATE_CONTEXT0" />
+                    </FDefinitionReference>
+                  </Children>
+                </FActionEntry>
+              </ReferenceAction>
+            </FDefinitionEntry>
+          </Children>
+        </FDefinitionCategory>
+        <FDefinitionCategory Name="BucketControl">
+          <Children Capacity="4">
+            <FDefinitionEntry Name="GET_BUCKET_TIME0" def:name="$attr:Name">
+              <Code>
+                <CodeInfo Path="Logic\Simulation\BucketControl" NamespaceName="Sample.APS.Logic.Simulation" ClassName="BucketControl" MethodName="GET_BUCKET_TIME0" />
+              </Code>
+              <ReferenceAction>
+                <FActionEntry Name="GetBucketTime" def:name="$attr:Name">
+                  <Children Capacity="4">
+                    <FDefinitionReference>
+                      <Definition ref:name="GET_BUCKET_TIME0" />
+                    </FDefinitionReference>
+                  </Children>
+                </FActionEntry>
+              </ReferenceAction>
+            </FDefinitionEntry>
+          </Children>
+        </FDefinitionCategory>
+        <FDefinitionCategory Name="Weights">
+          <Children Capacity="4">
+            <FDefinitionEntry Name="ARRIVAL_TIME" def:name="$attr:Name">
+              <Code>
+                <CodeInfo Path="Logic\Simulation\Weights" NamespaceName="Sample.APS.Logic.Simulation" ClassName="Weights" MethodName="ARRIVAL_TIME" />
+              </Code>
+            </FDefinitionEntry>
+            <FDefinitionEntry Name="SETUP_TIME" def:name="$attr:Name">
+              <Code>
+                <CodeInfo Path="Logic\Simulation\Weights" NamespaceName="Sample.APS.Logic.Simulation" ClassName="Weights" MethodName="SETUP_TIME" />
+              </Code>
+            </FDefinitionEntry>
+            <FDefinitionEntry Name="TARGET_ACHIVE_RATIO" def:name="$attr:Name">
+              <Code>
+                <CodeInfo Path="Logic\Simulation\Weights" NamespaceName="Sample.APS.Logic.Simulation" ClassName="Weights" MethodName="TARGET_ACHIVE_RATIO" />
+              </Code>
+            </FDefinitionEntry>
+          </Children>
+        </FDefinitionCategory>
+        <FDefinitionCategory Name="SetupControl">
+          <Children Capacity="4">
+            <FDefinitionEntry Name="GET_SETUP_TIME0" def:name="$attr:Name" Description="">
+              <Code>
+                <CodeInfo Path="Logic\Simulation\SetupControl" NamespaceName="Sample.APS.Logic.Simulation" ClassName="SetupControl" MethodName="GET_SETUP_TIME0" />
+              </Code>
+              <ReferenceAction>
+                <FActionEntry Name="GetSetupTime" def:name="$attr:Name">
+                  <Children Capacity="4">
+                    <FDefinitionReference>
+                      <Definition ref:name="GET_SETUP_TIME0" />
+                    </FDefinitionReference>
+                  </Children>
+                </FActionEntry>
+              </ReferenceAction>
+            </FDefinitionEntry>
+          </Children>
+        </FDefinitionCategory>
+      </Definitions>
+      <Children Capacity="13">
+        <FActionCategory Name="Factory">
+          <Children Capacity="4">
+            <FActionComponent Name="EqpInit">
+              <Option />
+              <Children Capacity="6">
+                <FActionEntry ref:name="GetEqpList" />
+                <FActionEntry ref:name="GetDispatcherType" />
+                <FActionEntry ref:name="GetEqpSimType" />
+              </Children>
+            </FActionComponent>
+          </Children>
+        </FActionCategory>
+        <FActionCategory Name="Entity">
+          <Children Capacity="6">
+            <FActionComponent Name="WipInit">
+              <Option />
+              <Children Capacity="15">
+                <FActionEntry ref:name="GetWips" />
+                <FActionEntry ref:name="CompareWip" />
+                <FActionEntry ref:name="LocateForDispatch" />
+                <FActionEntry ref:name="LocateForRun" />
+                <FActionEntry ref:name="GetLoadingEquipment" />
+                <FActionEntry ref:name="FixBatch" />
+                <FActionEntry ref:name="FixStartTime" />
+              </Children>
+            </FActionComponent>
+            <FActionComponent Name="InputBatchInit">
+              <Option />
+              <Children Capacity="6">
+                <FActionEntry ref:name="CompareLot" />
+                <FActionEntry ref:name="DoReserve" />
+                <FActionEntry ref:name="ReserveOne" />
+              </Children>
+            </FActionComponent>
+            <FActionComponent Name="Route">
+              <Option />
+              <Children Capacity="21">
+                <FActionEntry ref:name="GetLoadableEqpList" />
+                <FActionEntry ref:name="GetNextStep" />
+                <FActionEntry ref:name="CreateLoadInfo" />
+                <FActionEntry ref:name="IsDone" />
+              </Children>
+            </FActionComponent>
+          </Children>
+        </FActionCategory>
+        <FActionCategory Name="Transfer">
+          <Children Capacity="2">
+            <FActionComponent Name="TransferControl">
+              <Option />
+              <Children Capacity="4">
+                <FActionEntry ref:name="GetTransferTime" />
+              </Children>
+            </FActionComponent>
+            <FActionComponent Name="TransferSystemInterface">
+              <Option />
+              <Children Capacity="3">
+                <FActionEntry ref:name="OnDelivered" />
+              </Children>
+            </FActionComponent>
+          </Children>
+        </FActionCategory>
+        <FActionCategory Name="Dispatching">
+          <Children Capacity="3">
+            <FActionComponent Name="QueueControl" Order="1">
+              <Option />
+              <Children Capacity="9">
+                <FActionEntry ref:name="OnNotFoundDestination" />
+              </Children>
+            </FActionComponent>
+            <FActionComponent Name="FilterControl" Order="2">
+              <Option />
+              <Children Capacity="7">
+                <FActionEntry ref:name="DoFilter" />
+              </Children>
+            </FActionComponent>
+            <FActionComponent Name="DispatcherControl" Order="3">
+              <Option />
+              <Children Capacity="14">
+                <FActionEntry ref:name="SortLotGroupContents" />
+                <FActionEntry ref:name="UpdateContext" />
+                <FActionEntry ref:name="GetLotBatchType" />
+                <FActionEntry ref:name="OnDispatch" />
+                <FActionEntry ref:name="DoSelect" />
+                <FActionEntry ref:name="Evaluate" />
+                <FActionEntry ref:name="Select" />
+                <FActionEntry ref:name="AddDispatchWipLog" />
+                <FActionEntry ref:name="GetSelectedWipLog" />
+              </Children>
+            </FActionComponent>
+          </Children>
+        </FActionCategory>
+        <FActionCategory Name="Equipment">
+          <Children Capacity="5">
+            <FActionComponent Name="ProcessControl">
+              <Option />
+              <Children Capacity="14">
+                <FActionEntry ref:name="IsNeedSetup" />
+                <FActionEntry ref:name="GetProcessTime" />
+                <FActionEntry ref:name="GetProcessUnitSize" />
+                <FActionEntry ref:name="GetLoadableChambers" />
+                <FActionEntry ref:name="OnEntered" />
+              </Children>
+            </FActionComponent>
+            <FActionComponent Name="SetupControl">
+              <Option />
+              <Children Capacity="8">
+                <FActionEntry ref:name="GetSetupCrewKey" />
+                <FActionEntry ref:name="GetSetupTime" />
+                <FActionEntry ref:name="SetLastLoadingInfo" />
+              </Children>
+            </FActionComponent>
+            <FActionComponent Name="DownControl">
+              <Option />
+              <Children Capacity="4">
+                <FActionEntry ref:name="OnPMEvent" />
+                <FActionEntry ref:name="OnFailureEvent" />
+              </Children>
+            </FActionComponent>
+            <FActionComponent Name="Misc">
+              <Option />
+              <Children Capacity="6">
+                <FActionEntry ref:name="IsBatchType1" />
+              </Children>
+            </FActionComponent>
+          </Children>
+        </FActionCategory>
+        <FActionCategory Name="Bucketing">
+          <Children Capacity="2">
+            <FActionComponent Name="BucketControl">
+              <Option />
+              <Children Capacity="17">
+                <FActionEntry ref:name="AddBucketMove" />
+                <FActionEntry ref:name="GetBucketTime" />
+                <FActionEntry ref:name="GetBucketInputDelay" />
+                <FActionEntry ref:name="BucketRolling" />
+              </Children>
+            </FActionComponent>
+          </Children>
+        </FActionCategory>
+        <FActionCategory Name="SecondResource">
+          <Children Capacity="2">
+            <FActionComponent Name="ToolControl">
+              <Option />
+              <Children Capacity="11">
+                <FActionEntry ref:name="GetLastToolSettings" />
+                <FActionEntry ref:name="IsValidToolInfo" />
+                <FActionEntry ref:name="IsReadyTool" />
+                <FActionEntry ref:name="AttachTool" />
+                <FActionEntry ref:name="DetachTool" />
+              </Children>
+            </FActionComponent>
+          </Children>
+        </FActionCategory>
+        <FActionCategory Name="JobChangeAgent">
+          <Children Capacity="5">
+            <FActionComponent Name="AgentInit">
+              <Option />
+              <Children Capacity="14">
+                <FActionEntry ref:name="InitializeWorkManager" />
+                <FActionEntry ref:name="AddWorkLot" />
+                <FActionEntry ref:name="InitializeWorkStep" />
+              </Children>
+            </FActionComponent>
+            <FActionComponent Name="JobProfileControl">
+              <Option />
+              <Children Capacity="17">
+                <FActionEntry ref:name="SelectProfileEqp" />
+                <FActionEntry ref:name="CompareProfileEqp" />
+                <FActionEntry ref:name="SortProfileLot" />
+                <FActionEntry ref:name="CreateDummyWorkLot" />
+              </Children>
+            </FActionComponent>
+            <FActionComponent Name="JobTradeControl">
+              <Option />
+              <Children Capacity="9">
+                <FActionEntry ref:name="SelectUpStep" />
+                <FActionEntry ref:name="CompareUpStep" />
+                <FActionEntry ref:name="SelectAssignEqp" />
+                <FActionEntry ref:name="SelectDownEqp" />
+              </Children>
+            </FActionComponent>
+            <FActionComponent Name="JobChangeControl">
+              <Option />
+              <Children Capacity="8">
+                <FActionEntry ref:name="IsNeedDownStep" />
+                <FActionEntry ref:name="SelectDownEqp1" />
+                <FActionEntry ref:name="IsNeedUpStep" />
+                <FActionEntry ref:name="CanUp" />
+              </Children>
+            </FActionComponent>
+          </Children>
+        </FActionCategory>
+        <FCustomEntry Name="Statistics">
+          <Children Capacity="4">
+            <csd:EqpPlanInstance Name="EqpPlan" RowType="output.EqpPlan" Duration="1.00:00:00" Timing="AtEnd" Description="Simulation Period 기간 동안의 장비 이력 정보. ( Equipment history information during the simulation period )a">
+              <Columns Capacity="16">
+                <csd:EqpPlanColumnInfo TargetValue="= lot.LineID" ColumnName="LINE_ID" ColumnDataType="string" IsKey="True" />
+                <csd:EqpPlanColumnInfo TargetValue="= lot.CurrentPlan.ResID" ColumnName="EQP_ID" ColumnDataType="string" IsKey="True" />
+                <csd:EqpPlanColumnInfo TargetValue="= lot.LotID" ColumnName="LOT_ID" ColumnDataType="string" IsKey="True" />
+                <csd:EqpPlanColumnInfo TargetValue="= lot.CurrentProductID" ColumnName="PRODUCT_ID" ColumnDataType="string" />
+                <csd:EqpPlanColumnInfo TargetValue="= lot.CurrentProcessID" ColumnName="PROCESS_ID" ColumnDataType="string" />
+                <csd:EqpPlanColumnInfo TargetValue="= lot.CurrentStepID" ColumnName="STEP_ID" ColumnDataType="string" IsKey="True" />
+                <csd:EqpPlanColumnInfo TargetValue="= lot.UnitQty" ColumnName="LOT_QTY" ColumnDataType="int" />
+                <csd:EqpPlanColumnInfo CollectType="IN" TargetValue="= now" ColumnName="START_TIME" ColumnDataType="DateTime" />
+                <csd:EqpPlanColumnInfo CollectType="OUT" TargetValue="= now" ColumnName="END_TIME" ColumnDataType="DateTime" />
+                <csd:EqpPlanColumnInfo TargetValue="= lot.CurrentPlan.WorkTime.TotalSeconds" ColumnName="PROC_TIME" ColumnDataType="double" />
+              </Columns>
+              <Views Capacity="4">
+                <csd2:StatViewInfo Name="View" IndexType="Hashtable">
+                  <Keys Capacity="4">
+                    <String>LINE_ID</String>
+                    <String>EQP_ID</String>
+                    <String>LOT_ID</String>
+                    <String>STEP_ID</String>
+                  </Keys>
+                </csd2:StatViewInfo>
+              </Views>
+              <Children Capacity="8" />
+            </csd:EqpPlanInstance>
+            <csd:LoadHistInstance Name="LoadHistory" RowType="output.LoadHistory" Duration="1.00:00:00" Timing="AtBegin">
+              <PackingColumns Capacity="8">
+                <csd:LoadHistPackingColumnInfo Name="LotID" TargetValue="= plan.LotID" />
+                <csd:LoadHistPackingColumnInfo Name="ProductID" TargetValue="= plan.ProductID" />
+                <csd:LoadHistPackingColumnInfo Name="ProcessID" TargetValue="= plan.ProcessID" />
+                <csd:LoadHistPackingColumnInfo Name="StepID" TargetValue="= plan.StepID" />
+                <csd:LoadHistPackingColumnInfo Name="LotQty" TargetValue="= plan.UnitQty" />
+              </PackingColumns>
+              <Columns Capacity="8">
+                <csd:LoadHistColumnInfo TargetValue="=eqp.Target.ToSampleEqp().LineID" ColumnName="LINE_ID" ColumnDataType="string" IsKey="True" />
+                <csd:LoadHistColumnInfo TargetValue="=eqp.Target.ToSampleEqp().EqpID	" ColumnName="EQP_ID" ColumnDataType="string" IsKey="True" />
+                <csd:LoadHistColumnInfo TargetValue="=ShopCalendar.ShiftStartTimeOfDayT(now).DbToString()	" ColumnName="TARGET_DATE" ColumnDataType="string" IsKey="True" />
+                <csd:LoadHistColumnInfo CollectType="LOAD_INFO" ColumnName="INFO_GZIP" ColumnDataType="string" />
+                <csd:LoadHistColumnInfo CollectType="LOAD_INFO" ColumnName="INFO_GZIP2" ColumnDataType="string" />
+                <csd:LoadHistColumnInfo CollectType="LOAD_INFO" ColumnName="INFO_GZIP3" ColumnDataType="string" />
+              </Columns>
+              <Children Capacity="4" />
+            </csd:LoadHistInstance>
+            <csd:LoadStatInstance Name="LoadStat" CollectInterval="24" RowType="output.LoadStat" Duration="1.00:00:00" Timing="AtEnd">
+              <Columns Capacity="16">
+                <csd:LoadStatColumnInfo TargetValue="=eqp.Target.ToSampleEqp().LineID	" ColumnName="LINE_ID" ColumnDataType="string" IsKey="True" />
+                <csd:LoadStatColumnInfo TargetValue="=eqp.Target.ResGroup" ColumnName="EQP_GROUP" ColumnDataType="string" />
+                <csd:LoadStatColumnInfo TargetValue="=eqp.Target.ToSampleEqp().EqpID  	" ColumnName="EQP_ID" ColumnDataType="string" IsKey="True" />
+                <csd:LoadStatColumnInfo TargetValue="=ShopCalendar.ShiftStartTimeOfDayT(now).DbToString() 	" ColumnName="TARGET_DATE" ColumnDataType="string" IsKey="True" />
+                <csd:LoadStatColumnInfo CollectType="SETUP" ColumnName="SETUP" ColumnDataType="decimal" />
+                <csd:LoadStatColumnInfo CollectType="BUSY" ColumnName="BUSY" ColumnDataType="decimal" />
+                <csd:LoadStatColumnInfo CollectType="IDLE_RUN" ColumnName="IDLERUN" ColumnDataType="decimal" />
+                <csd:LoadStatColumnInfo CollectType="IDLE" ColumnName="IDLE" ColumnDataType="decimal" />
+                <csd:LoadStatColumnInfo CollectType="PM" ColumnName="PM" ColumnDataType="decimal" />
+                <csd:LoadStatColumnInfo CollectType="DOWN" ColumnName="DOWN" ColumnDataType="decimal" />
+              </Columns>
+              <Children Capacity="4" />
+            </csd:LoadStatInstance>
+          </Children>
+        </FCustomEntry>
+        <FCustomEntry Name="Weights">
+          <Children Capacity="4">
+            <FCustomFolder Name="DemandFactor">
+              <Children Capacity="4">
+                <csd2:WeightInstance>
+                  <Definition ref:name="TARGET_ACHIVE_RATIO" />
+                </csd2:WeightInstance>
+              </Children>
+            </FCustomFolder>
+            <FCustomFolder Name="UtilizationFactor">
+              <Children Capacity="4">
+                <csd2:WeightInstance>
+                  <Definition ref:name="SETUP_TIME" />
+                </csd2:WeightInstance>
+              </Children>
+            </FCustomFolder>
+            <FCustomFolder Name="DefaultFactor">
+              <Children Capacity="4">
+                <csd2:WeightInstance>
+                  <Definition ref:name="ARRIVAL_TIME" />
+                </csd2:WeightInstance>
+              </Children>
+            </FCustomFolder>
+          </Children>
+        </FCustomEntry>
+        <FCustomEntry Name="CustomEvents" />
+        <FCustomEntry Name="Filters" />
+      </Children>
+    </FActionMap>
+  </Content>
+</vxml:Document>

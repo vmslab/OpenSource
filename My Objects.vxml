@@ -1,0 +1,362 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<vxml:Document xmlns:vxml="http://www.vms-solutions.com/mozart/vxml/2012/1" xmlns:def="definitions" xmlns:ref="references" ContentType="dataclass" ContentKey="My Objects" xmlns="Mozart.Task.Execution.Design, Version=2019.115.0.0, Culture=neutral, PublicKeyToken=null" xmlns:ctm="clr-namespace:Mozart.Task.Model;assembly:Mozart.Task.Model, Version=2019.115.0.0, Culture=neutral, PublicKeyToken=null" xmlns:cdm="clr-namespace:Mozart.DataActions.Metadata;assembly:Mozart.DataActions, Version=2019.115.0.0, Culture=neutral, PublicKeyToken=null" xmlns:csg="clr-namespace:Mozart.SeePlan.General.DataModel;assembly:Mozart.SeePlan.General, Version=2019.115.0.0, Culture=neutral, PublicKeyToken=null" xmlns:csg2="clr-namespace:Mozart.SeePlan.General.Simulation;assembly:Mozart.SeePlan.General, Version=2019.115.0.0, Culture=neutral, PublicKeyToken=null" xmlns:css="clr-namespace:Mozart.SeePlan.Simulation;assembly:Mozart.SeePlan, Version=2019.115.0.0, Culture=neutral, PublicKeyToken=null" xmlns:csd="clr-namespace:Mozart.SeePlan.DataModel;assembly:Mozart.SeePlan, Version=2019.115.0.0, Culture=neutral, PublicKeyToken=null">
+  <Content>
+    <FDataClassRoot Name="My Objects">
+      <DataMarts>
+        <FDataMarts Name="DataMarts">
+          <Children Capacity="4">
+            <FDataMartRoot Name="InputMart">
+              <Children Capacity="8">
+                <FDataMartFolder Name="My Objects">
+                  <Children Capacity="4">
+                    <FDataMartFolder Name="Common" />
+                  </Children>
+                </FDataMartFolder>
+              </Children>
+            </FDataMartRoot>
+          </Children>
+        </FDataMarts>
+      </DataMarts>
+      <Constants>
+        <FConstantItem Name="Constants">
+          <ArgumentArray>
+            <ctm:ArgumentInfo-Array />
+          </ArgumentArray>
+        </FConstantItem>
+      </Constants>
+      <Enums>
+        <FDataClassFolder Name="Enums">
+          <Children Capacity="4">
+            <FDataClassItem Name="ProductType" IsEnum="True">
+              <Content>
+                <DataClassMeta Name="ProductType" Description="PART : 중간 부품 (투입부터 중간 조립품까지 모두 PART)&#xD;&#xA;FG : 최종생산품(생산출하품)">
+                  <Properties>
+                    <cdm:PropertyMeta Name="PART" PropertyType="" Description="중간 부품 (투입부터 중간 조립품까지 모두 PART)" />
+                    <cdm:PropertyMeta Name="FG" PropertyType="" Description="최종생산품(생산출하품)" />
+                  </Properties>
+                </DataClassMeta>
+              </Content>
+            </FDataClassItem>
+            <FDataClassItem Name="StepProcType" IsEnum="True">
+              <Content>
+                <DataClassMeta Name="StepProcType" Description="DUMMY : 공정을 SKIP 처리합니다. &#xD;&#xA;BUCKETING : 공정을 처리하기 위한 BUCKET 이 가상으로 만들어지고 해당 공정의 표준공정 정보에 설정된 CAPA 를 기준으로 BUCKETING 처리합니다. &#xD;&#xA;PROCESSING : 장비에 로딩(할당)되는 방식으로 공정을 처리합니다. ARRANGE 정보가 없거나 시간정보 및 기준정보 이상 시 혹은 CAPA 부족 시 LOT 의 작업/Schedule 안되는 경우 발생 가능">
+                  <Properties>
+                    <cdm:PropertyMeta Name="DUMMY" PropertyType="" Description="공정을 SKIP 처리" />
+                    <cdm:PropertyMeta Name="BUCKETING" PropertyType="" Description="공정을 처리하기 위한 BUCKET 이 가상으로 만들어지고 해당 공정의 표준공정 정보에 설정된 CAPA 를 기준으로 BUCKETING 처리" />
+                    <cdm:PropertyMeta Name="PROCESSING" PropertyType="" Description="장비에 로딩(할당)되는 방식으로 공정을 처리" />
+                  </Properties>
+                </DataClassMeta>
+              </Content>
+            </FDataClassItem>
+            <FDataClassItem Name="StepType" IsEnum="True">
+              <Content>
+                <DataClassMeta Name="StepType">
+                  <Properties>
+                    <cdm:PropertyMeta Name="IN" PropertyType="" Description="FAB IN" />
+                    <cdm:PropertyMeta Name="OUT" PropertyType="" Description="FAB OUT" />
+                    <cdm:PropertyMeta Name="NULL" PropertyType="" Description="NORMAL" />
+                  </Properties>
+                </DataClassMeta>
+              </Content>
+            </FDataClassItem>
+            <FDataClassItem Name="ErrorType" IsEnum="True">
+              <Content>
+                <DataClassMeta Name="ErrorType">
+                  <Properties>
+                    <cdm:PropertyMeta Name="WARNING" PropertyType="" />
+                    <cdm:PropertyMeta Name="ERROR" PropertyType="" />
+                  </Properties>
+                </DataClassMeta>
+              </Content>
+            </FDataClassItem>
+          </Children>
+        </FDataClassFolder>
+      </Enums>
+      <Children Capacity="4">
+        <FDataClassFolder Name="Simulation">
+          <Children Capacity="8">
+            <FDataClassItem Name="SampleEqp">
+              <Content>
+                <DataClassMeta IsEntityObject="True" GenerateContainer="True" ContainerType="EntityTable" MapType="Equipment" Name="SampleEqp">
+                  <BaseMappings>
+                    <Entry>
+                      <String>LineID</String>
+                      <String>LINE_ID</String>
+                    </Entry>
+                    <Entry>
+                      <String>EqpID</String>
+                      <String>EQP_ID</String>
+                    </Entry>
+                    <Entry>
+                      <String>ResID</String>
+                      <String>EQP_ID</String>
+                    </Entry>
+                    <Entry>
+                      <String>ResGroup</String>
+                      <String>EQP_GROUP</String>
+                    </Entry>
+                  </BaseMappings>
+                  <Orders1>LineID,EqpID,DispatchingRule,ResID,Key,ResGroup,ResType,SimType,State,StateChangeTime,DispatcherType,PresetID,Preset,ShiftType,OpenDate,CloseDate,Utilization,IsAutomated,SetupTime,IsNeedSetup,Calendar,ChildCount,ForceAddRunWip,LocationKey,Item,SiteID</Orders1>
+                  <BaseClass>
+                    <cdm:ReflectedBaseTypeInfo TargetType="csg:Eqp" />
+                  </BaseClass>
+                  <Properties>
+                    <cdm:PropertyMeta Name="SiteID" PropertyType="string" MapField="SITE_ID" />
+                  </Properties>
+                  <ViewInfo>
+                    <cdm:DataViewInfo>
+                      <Items Capacity="4">
+                        <cdm:DataViewItem Name="View" IndexType="Hashtable">
+                          <Keys Capacity="4">
+                            <String>LineID</String>
+                            <String>EqpID</String>
+                          </Keys>
+                        </cdm:DataViewItem>
+                      </Items>
+                    </cdm:DataViewInfo>
+                  </ViewInfo>
+                </DataClassMeta>
+              </Content>
+            </FDataClassItem>
+            <FDataClassItem Name="SamplePlanInfo">
+              <Content>
+                <DataClassMeta Name="SamplePlanInfo">
+                  <BaseClass>
+                    <cdm:ReflectedBaseTypeInfo TargetType="csg:PlanInfo" />
+                  </BaseClass>
+                </DataClassMeta>
+              </Content>
+            </FDataClassItem>
+            <FDataClassItem Name="SampleLotBatch">
+              <Content>
+                <DataClassMeta Name="SampleLotBatch">
+                  <BaseClass>
+                    <cdm:ReflectedBaseTypeInfo TargetType="csg2:LotBatch" />
+                  </BaseClass>
+                </DataClassMeta>
+              </Content>
+            </FDataClassItem>
+            <FDataClassItem Name="SampleLot">
+              <Content>
+                <DataClassMeta Name="SampleLot">
+                  <BaseClass>
+                    <cdm:ReflectedBaseTypeInfo TargetType="csg2:Lot" />
+                  </BaseClass>
+                </DataClassMeta>
+              </Content>
+            </FDataClassItem>
+            <FDataClassItem Name="SampleAoEquipment">
+              <Content>
+                <DataClassMeta Name="SampleAoEquipment">
+                  <BaseClass>
+                    <cdm:ReflectedBaseTypeInfo TargetType="css:AoEquipment" />
+                  </BaseClass>
+                </DataClassMeta>
+              </Content>
+            </FDataClassItem>
+            <FDataClassItem Name="SampleWeightPreset">
+              <Content>
+                <DataClassMeta IsEntityObject="True" GenerateContainer="True" ContainerType="EntityTable" Name="SampleWeightPreset">
+                  <BaseMappings>
+                    <Entry>
+                      <String>Name</String>
+                      <String>PRESET_ID</String>
+                    </Entry>
+                  </BaseMappings>
+                  <BaseClass>
+                    <cdm:ReflectedBaseTypeInfo TargetType="csd:WeightPreset" />
+                  </BaseClass>
+                  <Properties>
+                    <cdm:PropertyMeta Name="ScenarioID" PropertyType="string" />
+                  </Properties>
+                  <ViewInfo>
+                    <cdm:DataViewInfo>
+                      <Items Capacity="4">
+                        <cdm:DataViewItem Name="View" IndexType="Hashtable">
+                          <Keys Capacity="4">
+                            <String>Name</String>
+                          </Keys>
+                        </cdm:DataViewItem>
+                      </Items>
+                    </cdm:DataViewInfo>
+                  </ViewInfo>
+                </DataClassMeta>
+              </Content>
+            </FDataClassItem>
+            <FDataClassItem Name="SampleEqpArrange">
+              <Content>
+                <DataClassMeta IsEntityObject="True" GenerateContainer="True" ContainerType="EntityTable" MapType="EqpArrange" Name="SampleEqpArrange">
+                  <Properties>
+                    <cdm:PropertyMeta Name="LineID" PropertyType="string" MapField="LINE_ID" />
+                    <cdm:PropertyMeta Name="ProductID" PropertyType="string" MapField="PRODUCT_ID" />
+                    <cdm:PropertyMeta Name="ProcessID" PropertyType="string" MapField="PROCESS_ID" />
+                    <cdm:PropertyMeta Name="StepID" PropertyType="string" MapField="STEP_ID" />
+                    <cdm:PropertyMeta Name="EqpID" PropertyType="string" MapField="EQP_ID" />
+                    <cdm:PropertyMeta Name="TactTime" PropertyType="decimal" MapField="TACT_TIME" />
+                    <cdm:PropertyMeta Name="ProcTime" PropertyType="decimal" MapField="PROC_TIME" />
+                    <cdm:PropertyMeta Name="EffStartDate" PropertyType="DateTime" MapField="EFF_START_DATE" />
+                    <cdm:PropertyMeta Name="EffEndDate" PropertyType="DateTime" MapField="EFF_END_DATE" />
+                    <cdm:PropertyMeta Name="Eqp" PropertyType="custom.SampleEqp" />
+                  </Properties>
+                  <ViewInfo>
+                    <cdm:DataViewInfo>
+                      <Items Capacity="4">
+                        <cdm:DataViewItem Name="View" IndexType="Hashtable">
+                          <Keys Capacity="4">
+                            <String>LineID</String>
+                            <String>ProductID</String>
+                            <String>ProcessID</String>
+                            <String>StepID</String>
+                          </Keys>
+                        </cdm:DataViewItem>
+                      </Items>
+                    </cdm:DataViewInfo>
+                  </ViewInfo>
+                </DataClassMeta>
+              </Content>
+            </FDataClassItem>
+          </Children>
+        </FDataClassFolder>
+        <FDataClassFolder Name="Common">
+          <Children Capacity="4">
+            <FDataClassItem Name="SampleGeneralStep">
+              <Content>
+                <DataClassMeta MapType="ProcStep" Name="SampleGeneralStep">
+                  <BaseMappings>
+                    <Entry>
+                      <String>Sequence</String>
+                      <String>STEP_SEQ</String>
+                    </Entry>
+                    <Entry>
+                      <String>StepType</String>
+                      <String>STEP_TYPE</String>
+                    </Entry>
+                    <Entry>
+                      <String>StdStepID</String>
+                      <String>STD_STEP_ID</String>
+                    </Entry>
+                    <Entry>
+                      <String>StepID</String>
+                      <String>STEP_ID</String>
+                    </Entry>
+                    <Entry>
+                      <String>Key</String>
+                      <String>STEP_ID</String>
+                    </Entry>
+                  </BaseMappings>
+                  <BaseClass>
+                    <cdm:ReflectedBaseTypeInfo TargetType="csg:GeneralStep" />
+                  </BaseClass>
+                </DataClassMeta>
+              </Content>
+            </FDataClassItem>
+            <FDataClassItem Name="SampleWipInfo">
+              <Content>
+                <DataClassMeta IsEntityObject="True" GenerateContainer="True" ContainerType="EntityTable" MapType="Wip" Name="SampleWipInfo">
+                  <Interfaces>
+                    <cdm:ReflectedBaseTypeInfo TargetType="csg:IWipInfo" />
+                  </Interfaces>
+                  <Properties>
+                    <cdm:PropertyMeta Name="LineID" PropertyType="string" MapField="LINE_ID" />
+                    <cdm:PropertyMeta Name="LotID" PropertyType="string" MapField="LOT_ID" />
+                    <cdm:PropertyMeta Name="UnitQty" PropertyType="double" MapField="UNIT_QTY" />
+                    <cdm:PropertyMeta Name="Product" PropertyType="Mozart.SeePlan.General.DataModel.Product" />
+                    <cdm:PropertyMeta Name="Process" PropertyType="Mozart.SeePlan.General.DataModel.Process" />
+                    <cdm:PropertyMeta Name="InitialStep" PropertyType="Mozart.SeePlan.General.DataModel.GeneralStep" />
+                    <cdm:PropertyMeta Name="InitialEqp" PropertyType="Mozart.SeePlan.General.DataModel.Eqp" />
+                    <cdm:PropertyMeta Name="CurrentState" PropertyType="Mozart.SeePlan.Simulation.EntityState" />
+                    <cdm:PropertyMeta Name="WipProductID" PropertyType="string" MapField="PRODUCT_ID" />
+                    <cdm:PropertyMeta Name="WipProcessID" PropertyType="string" MapField="PROCESS_ID" />
+                    <cdm:PropertyMeta Name="WipStepID" PropertyType="string" MapField="STEP_ID" />
+                    <cdm:PropertyMeta Name="WipEqpID" PropertyType="string" MapField="EQP_ID" />
+                    <cdm:PropertyMeta Name="WipState" PropertyType="string" MapField="STATE" />
+                    <cdm:PropertyMeta Name="WipStateTime" PropertyType="DateTime" MapField="STATE_TIME" />
+                    <cdm:PropertyMeta Name="LastTrackInTime" PropertyType="DateTime" />
+                    <cdm:PropertyMeta Name="LastProcessStartTime" PropertyType="DateTime" />
+                    <cdm:PropertyMeta Name="LastTrackOutTime" PropertyType="DateTime" />
+                    <cdm:PropertyMeta Name="ReleaseTime" PropertyType="DateTime" MapField="LINE_IN_TIME" />
+                    <cdm:PropertyMeta Name="ArrivalTime" PropertyType="DateTime" MapField="ARRIVE_TIME" />
+                    <cdm:PropertyMeta Name="BatchID" PropertyType="string" MapField="BATCH_ID" />
+                  </Properties>
+                  <ViewInfo>
+                    <cdm:DataViewInfo>
+                      <Items Capacity="4">
+                        <cdm:DataViewItem Name="View" IndexType="Hashtable">
+                          <Keys Capacity="4">
+                            <String>LotID</String>
+                          </Keys>
+                        </cdm:DataViewItem>
+                      </Items>
+                    </cdm:DataViewInfo>
+                  </ViewInfo>
+                </DataClassMeta>
+              </Content>
+            </FDataClassItem>
+            <FDataClassItem Name="SampleProcess">
+              <Content>
+                <DataClassMeta IsEntityObject="True" GenerateContainer="True" ContainerType="EntityTable" MapType="Process" Name="SampleProcess">
+                  <BaseMappings>
+                    <Entry>
+                      <String>LineID</String>
+                      <String>LINE_ID</String>
+                    </Entry>
+                    <Entry>
+                      <String>ProcessID</String>
+                      <String>PROCESS_ID</String>
+                    </Entry>
+                  </BaseMappings>
+                  <BaseClass>
+                    <cdm:ReflectedBaseTypeInfo TargetType="csg:Process" />
+                  </BaseClass>
+                  <ViewInfo>
+                    <cdm:DataViewInfo>
+                      <Items Capacity="4">
+                        <cdm:DataViewItem Name="View" IndexType="Hashtable">
+                          <Keys Capacity="4">
+                            <String>LineID</String>
+                            <String>ProcessID</String>
+                          </Keys>
+                        </cdm:DataViewItem>
+                      </Items>
+                    </cdm:DataViewInfo>
+                  </ViewInfo>
+                </DataClassMeta>
+              </Content>
+            </FDataClassItem>
+            <FDataClassItem Name="SampleProduct">
+              <Content>
+                <DataClassMeta IsEntityObject="True" GenerateContainer="True" ContainerType="EntityTable" MapType="Product" Name="SampleProduct">
+                  <BaseMappings>
+                    <Entry>
+                      <String>LineID</String>
+                      <String>LINE_ID</String>
+                    </Entry>
+                    <Entry>
+                      <String>ProductID</String>
+                      <String>PRODUCT_ID</String>
+                    </Entry>
+                  </BaseMappings>
+                  <BaseClass>
+                    <cdm:ReflectedBaseTypeInfo TargetType="csg:Product" />
+                  </BaseClass>
+                  <ViewInfo>
+                    <cdm:DataViewInfo>
+                      <Items Capacity="4">
+                        <cdm:DataViewItem Name="View" IndexType="Hashtable">
+                          <Keys Capacity="4">
+                            <String>LineID</String>
+                            <String>ProductID</String>
+                          </Keys>
+                        </cdm:DataViewItem>
+                      </Items>
+                    </cdm:DataViewInfo>
+                  </ViewInfo>
+                </DataClassMeta>
+              </Content>
+            </FDataClassItem>
+          </Children>
+        </FDataClassFolder>
+      </Children>
+    </FDataClassRoot>
+  </Content>
+</vxml:Document>

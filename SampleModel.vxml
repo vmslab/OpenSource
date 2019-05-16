@@ -1,0 +1,784 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<vxml:Document xmlns:vxml="http://www.vms-solutions.com/mozart/vxml/2012/1" xmlns:def="definitions" xmlns:ref="references" ContentType="vmodel" ContentKey="SampleModel" xmlns="Mozart.Task.Execution.Design, Version=2019.115.0.0, Culture=neutral, PublicKeyToken=null" xmlns:ctf="clr-namespace:Mozart.Task.Framework;assembly:Mozart.Task.Framework, Version=2019.115.0.0, Culture=neutral, PublicKeyToken=null" xmlns:ctm="clr-namespace:Mozart.Task.Model;assembly:Mozart.Task.Model, Version=2019.115.0.0, Culture=neutral, PublicKeyToken=null" xmlns:cdd="clr-namespace:Mozart.DataActions;assembly:Mozart.DataActions, Version=2019.115.0.0, Culture=neutral, PublicKeyToken=null" xmlns:cdm="clr-namespace:Mozart.DataActions.Metadata;assembly:Mozart.DataActions, Version=2019.115.0.0, Culture=neutral, PublicKeyToken=null">
+  <Content>
+    <VModelDoc Name="SampleModel" OverrideValues="" InputStorageType="File" OutputStorageType="File">
+      <TargetDefinition>
+        <ctf:TargetDefinition Guid="f6b1f132-0422-453c-8eef-da2cdb469594" Title="Sample.APS" Category="Site" Description="" AssemblyName="Sample.APS" ConfigurationFile="" PrivatePath="" UiPackage="" UiAppConfig="" />
+      </TargetDefinition>
+      <ArgumentArray>
+        <ctm:ArgumentInfo-Array>
+          <ctm:ArgumentInfo Category="0.Basic" Name="model-name" TypeEnum="String">
+            <InitialValue>
+              <String>Sample</String>
+            </InitialValue>
+          </ctm:ArgumentInfo>
+          <ctm:ArgumentInfo Category="0.Basic" Name="start-time" TypeEnum="DateTime" />
+          <ctm:ArgumentInfo Category="0.Basic" Name="period" TypeEnum="Int32">
+            <InitialValue>
+              <String>3</String>
+            </InitialValue>
+          </ctm:ArgumentInfo>
+          <ctm:ArgumentInfo Category="1." Name="ExcutionType" TypeEnum="String" ValueRange="=List(&quot;Simulation&quot;,&quot;Pegging&quot;,&quot;All&quot;)" Description="All = Pegging , Simulation 모듈 모두 수행">
+            <InitialValue>
+              <String>Simulation</String>
+            </InitialValue>
+          </ctm:ArgumentInfo>
+        </ctm:ArgumentInfo-Array>
+      </ArgumentArray>
+      <ConfigArray>
+        <ctm:ArgumentInfo-Array />
+      </ConfigArray>
+      <TestValues>
+        <ctm:ArgCache>
+          <KeyMapArray>
+            <String-Array>
+              <String>EqpArrange=</String>
+              <String>Equipment=</String>
+            </String-Array>
+          </KeyMapArray>
+        </ctm:ArgCache>
+      </TestValues>
+      <Inputs Name="Inputs" Storage="C:\Users\KTR\Desktop\Sample.APS\Sample.APS\Generated\Data">
+        <ItemArray>
+          <cdd:DataItem-Array>
+            <cdd:DataItem Name="Product" Category="BOP">
+              <MetaInfo>
+                <cdm:DataMetaInfo Name="Product">
+                  <Properties>
+                    <cdm:PropertyMeta Name="LINE_ID" PropertyType="string" />
+                    <cdm:PropertyMeta Name="PRODUCT_ID" PropertyType="string" />
+                    <cdm:PropertyMeta Name="PRODUCT_NAME" PropertyType="string" />
+                    <cdm:PropertyMeta Name="PRODUCT_TYPE" PropertyType="string" />
+                    <cdm:PropertyMeta Name="PROCESS_ID" PropertyType="string" />
+                    <cdm:PropertyMeta Name="LOT_SIZE" PropertyType="int" />
+                    <cdm:PropertyMeta Name="INPUT_BATCH_SIZE" PropertyType="int" />
+                  </Properties>
+                </cdm:DataMetaInfo>
+              </MetaInfo>
+              <ActiveAction>
+                <cdd:DataAction Name="Default" DataSource="SourceDB" IsAdapters="False" def:name="Product_Default">
+                  <Commands>
+                    <cdd:DataCommand Name="Cmd1" IsBindTable="True">
+                      <CommandText>SELECT 
+	A.LINE_ID, 
+	A.PRODUCT_ID,	
+	A.PRODUCT_ID	PRODUCT_NAME,	
+	'SAMPLE'	PRODUCT_TYPE,
+	A.PROCESS_ID	
+FROM 
+	BOP_PRODUCT A</CommandText>
+                    </cdd:DataCommand>
+                  </Commands>
+                </cdd:DataAction>
+              </ActiveAction>
+              <Actions>
+                <cdd:DataAction ref:name="Product_Default" />
+              </Actions>
+            </cdd:DataItem>
+            <cdd:DataItem Name="Process" Category="BOP">
+              <MetaInfo>
+                <cdm:DataMetaInfo Name="Process">
+                  <Properties>
+                    <cdm:PropertyMeta Name="LINE_ID" PropertyType="string" />
+                    <cdm:PropertyMeta Name="PROCESS_ID" PropertyType="string" />
+                    <cdm:PropertyMeta Name="PROCESS_NAME" PropertyType="string" />
+                    <cdm:PropertyMeta Name="DESCRIPTION" PropertyType="string" />
+                  </Properties>
+                </cdm:DataMetaInfo>
+              </MetaInfo>
+              <ActiveAction>
+                <cdd:DataAction Name="Default" DataSource="SourceDB" IsAdapters="False" def:name="Process_Default">
+                  <Commands>
+                    <cdd:DataCommand Name="Cmd1" IsBindTable="True">
+                      <CommandText>SELECT 
+	A.LINE_ID, 
+	A.PROCESS_ID
+	, A.PROCESS_ID PROCESS_NAME
+	, 'PROC' DESCRIPTION
+FROM 
+	BOP_PROCESS A</CommandText>
+                    </cdd:DataCommand>
+                  </Commands>
+                </cdd:DataAction>
+              </ActiveAction>
+              <Actions>
+                <cdd:DataAction ref:name="Process_Default" />
+              </Actions>
+            </cdd:DataItem>
+            <cdd:DataItem Name="ProcStep" Category="BOP">
+              <MetaInfo>
+                <cdm:DataMetaInfo Name="ProcStep">
+                  <Properties>
+                    <cdm:PropertyMeta Name="PROCESS_ID" PropertyType="string" />
+                    <cdm:PropertyMeta Name="STEP_ID" PropertyType="string" />
+                    <cdm:PropertyMeta Name="STEP_SEQ" PropertyType="int" Description="1,2,3" />
+                    <cdm:PropertyMeta Name="STD_STEP_ID" PropertyType="string" />
+                    <cdm:PropertyMeta Name="STEP_TYPE" PropertyType="string" Description="IN/OUT/NULL" />
+                    <cdm:PropertyMeta Name="PROCESS_TYPE" PropertyType="string" Description="DUMMY/BUCKET/PROCESSING" />
+                    <cdm:PropertyMeta Name="IN_STOCK" PropertyType="string" />
+                    <cdm:PropertyMeta Name="OUT_STOCK" PropertyType="string" />
+                  </Properties>
+                  <ViewInfo>
+                    <cdm:DataViewInfo>
+                      <Items Capacity="4">
+                        <cdm:DataViewItem Name="View" IndexType="Hashtable">
+                          <Keys Capacity="4">
+                            <String>PROCESS_ID</String>
+                          </Keys>
+                        </cdm:DataViewItem>
+                      </Items>
+                    </cdm:DataViewInfo>
+                  </ViewInfo>
+                </cdm:DataMetaInfo>
+              </MetaInfo>
+              <ActiveAction>
+                <cdd:DataAction Name="Default" DataSource="SourceDB" IsAdapters="False" def:name="ProcStep_Default">
+                  <Commands>
+                    <cdd:DataCommand Name="Cmd1" IsBindTable="True">
+                      <CommandText>SELECT 
+	A.LINE_ID, 
+	A.PROCESS_ID, 
+	A.STEP_ID, 
+	A.STEP_SEQ, 
+	A.STEP_ID	STD_STEP_ID,
+	A.STEP_TYPE PROCESS_TYPE
+FROM 
+	BOP_PROCSTEP A</CommandText>
+                    </cdd:DataCommand>
+                  </Commands>
+                </cdd:DataAction>
+              </ActiveAction>
+              <Actions>
+                <cdd:DataAction ref:name="ProcStep_Default" />
+              </Actions>
+            </cdd:DataItem>
+            <cdd:DataItem Name="Equipment" Category="RESOURCE">
+              <MetaInfo>
+                <cdm:DataMetaInfo Name="Equipment">
+                  <Properties>
+                    <cdm:PropertyMeta Name="SITE_ID" PropertyType="string" Description="SITE 위치 ?" />
+                    <cdm:PropertyMeta Name="LINE_ID" PropertyType="string" />
+                    <cdm:PropertyMeta Name="EQP_ID" PropertyType="string" />
+                    <cdm:PropertyMeta Name="EQP_MODEL" PropertyType="string" />
+                    <cdm:PropertyMeta Name="EQP_TYPE" PropertyType="string" Description="TURRET, MACHING CENTER" />
+                    <cdm:PropertyMeta Name="EQP_GROUP" PropertyType="string" />
+                    <cdm:PropertyMeta Name="EQP_STATE" PropertyType="string" Description="DOWN, PM, BUSY, IDLE, SETUP" />
+                    <cdm:PropertyMeta Name="EQP_STATE_CODE" PropertyType="string" Description="DOWN, PM인 경우 상세코드에 따라  UP TIME  설정" />
+                    <cdm:PropertyMeta Name="STATE_CHANGE_TIME" PropertyType="string" />
+                    <cdm:PropertyMeta Name="SIM_TYPE" PropertyType="string" Description="TABLE,INLINE,CHAMBER,LOTBATCH,LOTBATCH,BATCHINLINE" />
+                    <cdm:PropertyMeta Name="PRESET_ID" PropertyType="string" />
+                    <cdm:PropertyMeta Name="DISPATCHER_TYPE" PropertyType="string" Description="FIFO, EDD, SPT, LPT, WeightSum, WeightSorted" />
+                    <cdm:PropertyMeta Name="MAX_LOT_BATCH_SIZE" PropertyType="string" />
+                  </Properties>
+                </cdm:DataMetaInfo>
+              </MetaInfo>
+              <ActiveAction>
+                <cdd:DataAction Name="Default" DataSource="SourceDB" IsAdapters="False" def:name="Equipment_Default">
+                  <Commands>
+                    <cdd:DataCommand Name="Cmd1" IsBindTable="True">
+                      <CommandText>SELECT 
+	A.LINE_ID, 
+	A.EQP_ID, 
+	'H12'	SITE_ID,
+	A.EQP_GROUP,
+	A.SIM_TYPE, 
+	--A.DISPATCHER_TYPE, 
+	'WeightSorted' DISPATCHER_TYPE,
+	A.PRESET_ID, 
+	A.STATUS	 EQP_STATE, 
+	A.EQP_GROUP
+FROM 
+	SIM_EQUIPMENT A</CommandText>
+                    </cdd:DataCommand>
+                  </Commands>
+                </cdd:DataAction>
+              </ActiveAction>
+              <Actions>
+                <cdd:DataAction ref:name="Equipment_Default" />
+              </Actions>
+            </cdd:DataItem>
+            <cdd:DataItem Name="EqpArrange" Category="RESOURCE">
+              <MetaInfo>
+                <cdm:DataMetaInfo Name="EqpArrange">
+                  <Properties>
+                    <cdm:PropertyMeta Name="LINE_ID" PropertyType="string" />
+                    <cdm:PropertyMeta Name="PRODUCT_ID" PropertyType="string" />
+                    <cdm:PropertyMeta Name="PROCESS_ID" PropertyType="string" />
+                    <cdm:PropertyMeta Name="STEP_ID" PropertyType="string" />
+                    <cdm:PropertyMeta Name="EQP_ID" PropertyType="string" />
+                    <cdm:PropertyMeta Name="TACT_TIME" PropertyType="string" />
+                    <cdm:PropertyMeta Name="PROC_TIME" PropertyType="string" />
+                    <cdm:PropertyMeta Name="EFF_START_DATE" PropertyType="DateTime" />
+                    <cdm:PropertyMeta Name="EFF_END_DATE" PropertyType="DateTime" />
+                  </Properties>
+                </cdm:DataMetaInfo>
+              </MetaInfo>
+              <ActiveAction>
+                <cdd:DataAction Name="Default" DataSource="SourceDB" IsAdapters="False" def:name="EqpArrange_Default">
+                  <Commands>
+                    <cdd:DataCommand Name="Cmd1" IsBindTable="True">
+                      <CommandText>SELECT 
+	A.LINE_ID, 
+	A.EQP_ID, 
+	A.PRODUCT_ID, 
+	A.PROCESS_ID, 
+	A.STEP_ID
+FROM 
+	SIM_EQPARRANGE A</CommandText>
+                    </cdd:DataCommand>
+                  </Commands>
+                </cdd:DataAction>
+              </ActiveAction>
+              <Actions>
+                <cdd:DataAction ref:name="EqpArrange_Default" />
+              </Actions>
+            </cdd:DataItem>
+            <cdd:DataItem Name="Wip" Category="WIP">
+              <MetaInfo>
+                <cdm:DataMetaInfo Name="Wip">
+                  <Properties>
+                    <cdm:PropertyMeta Name="LINE_ID" PropertyType="string" />
+                    <cdm:PropertyMeta Name="LOT_ID" PropertyType="string" />
+                    <cdm:PropertyMeta Name="PRODUCT_ID" PropertyType="string" />
+                    <cdm:PropertyMeta Name="PROCESS_ID" PropertyType="string" />
+                    <cdm:PropertyMeta Name="STEP_ID" PropertyType="string" />
+                    <cdm:PropertyMeta Name="UNIT_QTY" PropertyType="int" />
+                    <cdm:PropertyMeta Name="EQP_ID" PropertyType="string" />
+                    <cdm:PropertyMeta Name="LINE_IN_TIME" PropertyType="DateTime" />
+                    <cdm:PropertyMeta Name="ARRIVE_TIME" PropertyType="DateTime" />
+                    <cdm:PropertyMeta Name="STATE" PropertyType="string" Description="HOLD,WAIT,RUN" />
+                    <cdm:PropertyMeta Name="STATE_TIME" PropertyType="DateTime" />
+                    <cdm:PropertyMeta Name="BATCH_ID" PropertyType="string" />
+                  </Properties>
+                </cdm:DataMetaInfo>
+              </MetaInfo>
+              <ActiveAction>
+                <cdd:DataAction Name="Default" DataSource="SourceDB" IsAdapters="False" def:name="Wip_Default">
+                  <Commands>
+                    <cdd:DataCommand Name="Cmd1" IsBindTable="True">
+                      <CommandText>SELECT 
+	A.LINE_ID, 
+	A.LOT_ID, 
+	A.PRODUCT_ID, 
+	A.PROCESS_ID, 
+	A.STEP_ID, 
+	A.UNIT_QTY, 
+	A.EQP_ID, 
+	GETDATE() - 10 as  LINE_IN_TIME  ,	 
+	GETDATE() - 2 as  ARRIVE_TIME, 
+	A.LOT_STATE, 
+	GETDATE() - 1 as STATE_TIME
+FROM 
+	SIM_WIP A</CommandText>
+                    </cdd:DataCommand>
+                  </Commands>
+                </cdd:DataAction>
+              </ActiveAction>
+              <Actions>
+                <cdd:DataAction ref:name="Wip_Default" />
+              </Actions>
+            </cdd:DataItem>
+            <cdd:DataItem Name="StdStep" Category="BOP">
+              <MetaInfo>
+                <cdm:DataMetaInfo Name="StdStep">
+                  <Properties>
+                    <cdm:PropertyMeta Name="STD_STEP_ID" PropertyType="string" />
+                    <cdm:PropertyMeta Name="STEP_TAT" PropertyType="string" />
+                    <cdm:PropertyMeta Name="STEP_YIELD" PropertyType="decimal" />
+                    <cdm:PropertyMeta Name="BUCKET_CPAPCITY" PropertyType="decimal" />
+                  </Properties>
+                </cdm:DataMetaInfo>
+              </MetaInfo>
+              <ActiveAction>
+                <cdd:DataAction Name="Default" DataSource="SourceDB" IsAdapters="False" def:name="StdStep_Default">
+                  <Commands>
+                    <cdd:DataCommand Name="Cmd1" IsBindTable="True" />
+                  </Commands>
+                </cdd:DataAction>
+              </ActiveAction>
+              <Actions>
+                <cdd:DataAction ref:name="StdStep_Default" />
+              </Actions>
+            </cdd:DataItem>
+            <cdd:DataItem Name="LineInfo" Category="RESOURCE">
+              <MetaInfo>
+                <cdm:DataMetaInfo Name="LineInfo">
+                  <Properties>
+                    <cdm:PropertyMeta Name="SITE_ID" PropertyType="string" />
+                    <cdm:PropertyMeta Name="LINE_ID" PropertyType="string" />
+                    <cdm:PropertyMeta Name="LINE_NAME" PropertyType="string" />
+                    <cdm:PropertyMeta Name="LINE_TYPE" PropertyType="string" Description="INHOUSE,OUTSOURCING" />
+                  </Properties>
+                </cdm:DataMetaInfo>
+              </MetaInfo>
+              <ActiveAction>
+                <cdd:DataAction Name="Default" DataSource="SourceDB" IsAdapters="False" def:name="LineInfo_Default">
+                  <Commands>
+                    <cdd:DataCommand Name="Cmd1" IsBindTable="True" />
+                  </Commands>
+                </cdd:DataAction>
+              </ActiveAction>
+              <Actions>
+                <cdd:DataAction ref:name="LineInfo_Default" />
+              </Actions>
+            </cdd:DataItem>
+            <cdd:DataItem Name="ProductRoute" Category="BOP">
+              <MetaInfo>
+                <cdm:DataMetaInfo Name="ProductRoute">
+                  <Properties>
+                    <cdm:PropertyMeta Name="FR_PRODUCT_ID" PropertyType="string" />
+                    <cdm:PropertyMeta Name="OPER_ID" PropertyType="string" />
+                    <cdm:PropertyMeta Name="TO_PRODUCT_ID" PropertyType="string" />
+                    <cdm:PropertyMeta Name="IN_QTY" PropertyType="string" />
+                    <cdm:PropertyMeta Name="OUT_QTY" PropertyType="string" />
+                    <cdm:PropertyMeta Name="ROUTE_TYP" PropertyType="string" Description="BOM, CHANGE" />
+                    <cdm:PropertyMeta Name="CHANGE_TYPE" PropertyType="string" Description="WAIT,IN,OUT" />
+                    <cdm:PropertyMeta Name="PRIORITY" PropertyType="int" />
+                  </Properties>
+                </cdm:DataMetaInfo>
+              </MetaInfo>
+              <ActiveAction>
+                <cdd:DataAction Name="Default" DataSource="SourceDB" IsAdapters="False" def:name="ProductRoute_Default">
+                  <Commands>
+                    <cdd:DataCommand Name="Cmd1" IsBindTable="True" />
+                  </Commands>
+                </cdd:DataAction>
+              </ActiveAction>
+              <Actions>
+                <cdd:DataAction ref:name="ProductRoute_Default" />
+              </Actions>
+            </cdd:DataItem>
+            <cdd:DataItem Name="StepTAT" Category="BOP">
+              <MetaInfo>
+                <cdm:DataMetaInfo Name="StepTAT">
+                  <Properties>
+                    <cdm:PropertyMeta Name="PRODUCT_ID" PropertyType="string" />
+                    <cdm:PropertyMeta Name="STEP_ID" PropertyType="string" />
+                    <cdm:PropertyMeta Name="WAIT_TAT" PropertyType="decimal" />
+                    <cdm:PropertyMeta Name="RUN_TAT" PropertyType="decimal" />
+                    <cdm:PropertyMeta Name="TOTAL_TAT" PropertyType="decimal" />
+                  </Properties>
+                </cdm:DataMetaInfo>
+              </MetaInfo>
+              <ActiveAction>
+                <cdd:DataAction Name="Default" DataSource="SourceDB" IsAdapters="False" def:name="StepTAT_Default">
+                  <Commands>
+                    <cdd:DataCommand Name="Cmd1" IsBindTable="True" />
+                  </Commands>
+                </cdd:DataAction>
+              </ActiveAction>
+              <Actions>
+                <cdd:DataAction ref:name="StepTAT_Default" />
+              </Actions>
+            </cdd:DataItem>
+            <cdd:DataItem Name="StepYield" Category="BOP">
+              <MetaInfo>
+                <cdm:DataMetaInfo Name="StepYield">
+                  <Properties>
+                    <cdm:PropertyMeta Name="PRODUCT_ID" PropertyType="string" />
+                    <cdm:PropertyMeta Name="STEP_ID" PropertyType="string" />
+                    <cdm:PropertyMeta Name="STEP_YIELD" PropertyType="decimal" />
+                  </Properties>
+                </cdm:DataMetaInfo>
+              </MetaInfo>
+              <ActiveAction>
+                <cdd:DataAction Name="Default" DataSource="SourceDB" IsAdapters="False" def:name="StepYield_Default">
+                  <Commands>
+                    <cdd:DataCommand Name="Cmd1" IsBindTable="True" />
+                  </Commands>
+                </cdd:DataAction>
+              </ActiveAction>
+              <Actions>
+                <cdd:DataAction ref:name="StepYield_Default" />
+              </Actions>
+            </cdd:DataItem>
+            <cdd:DataItem Name="Demand" Category="TARGET">
+              <MetaInfo>
+                <cdm:DataMetaInfo Name="Demand">
+                  <Properties>
+                    <cdm:PropertyMeta Name="DEMAND_VER" PropertyType="string" />
+                    <cdm:PropertyMeta Name="DEMAND_ID" PropertyType="string" />
+                    <cdm:PropertyMeta Name="PRODUCT_ID" PropertyType="string" />
+                    <cdm:PropertyMeta Name="DUE_DATE" PropertyType="string" />
+                    <cdm:PropertyMeta Name="DEMAND_QTY" PropertyType="uint" />
+                  </Properties>
+                </cdm:DataMetaInfo>
+              </MetaInfo>
+              <ActiveAction>
+                <cdd:DataAction Name="Default" DataSource="SourceDB" IsAdapters="False" def:name="Demand_Default">
+                  <Commands>
+                    <cdd:DataCommand Name="Cmd1" IsBindTable="True" />
+                  </Commands>
+                </cdd:DataAction>
+              </ActiveAction>
+              <Actions>
+                <cdd:DataAction ref:name="Demand_Default" />
+              </Actions>
+            </cdd:DataItem>
+            <cdd:DataItem Name="Config" Category="EXECUTION">
+              <MetaInfo>
+                <cdm:DataMetaInfo Name="Config">
+                  <Properties>
+                    <cdm:PropertyMeta Name="GROUP" PropertyType="string" />
+                    <cdm:PropertyMeta Name="KEY" PropertyType="string" />
+                    <cdm:PropertyMeta Name="VALUE" PropertyType="string" />
+                    <cdm:PropertyMeta Name="DESCRIPTION" PropertyType="string" />
+                  </Properties>
+                </cdm:DataMetaInfo>
+              </MetaInfo>
+              <ActiveAction>
+                <cdd:DataAction Name="Default" DataSource="SourceDB" IsAdapters="False" def:name="Config_Default">
+                  <Commands>
+                    <cdd:DataCommand Name="Cmd1" IsBindTable="True" />
+                  </Commands>
+                </cdd:DataAction>
+              </ActiveAction>
+              <Actions>
+                <cdd:DataAction ref:name="Config_Default" />
+              </Actions>
+            </cdd:DataItem>
+            <cdd:DataItem Name="ExcutionOpertion" Category="EXECUTION">
+              <MetaInfo>
+                <cdm:DataMetaInfo Name="ExcutionOpertion">
+                  <Properties>
+                    <cdm:PropertyMeta Name="OPTION_ID" PropertyType="string" />
+                    <cdm:PropertyMeta Name="OPTION_VLAUE" PropertyType="string" />
+                  </Properties>
+                </cdm:DataMetaInfo>
+              </MetaInfo>
+              <ActiveAction>
+                <cdd:DataAction Name="Default" DataSource="SourceDB" IsAdapters="False" def:name="ExcutionOpertion_Default">
+                  <Commands>
+                    <cdd:DataCommand Name="Cmd1" IsBindTable="True" />
+                  </Commands>
+                </cdd:DataAction>
+              </ActiveAction>
+              <Actions>
+                <cdd:DataAction ref:name="ExcutionOpertion_Default" />
+              </Actions>
+            </cdd:DataItem>
+            <cdd:DataItem Name="PresetInfo" Category="EXECUTION">
+              <MetaInfo>
+                <cdm:DataMetaInfo Name="PresetInfo">
+                  <Properties>
+                    <cdm:PropertyMeta Name="SCENARIO_ID" PropertyType="string" />
+                    <cdm:PropertyMeta Name="PRESET_ID" PropertyType="string" />
+                    <cdm:PropertyMeta Name="FACTOR_ID" PropertyType="string" />
+                    <cdm:PropertyMeta Name="FACTOR_TYPE" PropertyType="string" />
+                    <cdm:PropertyMeta Name="FACTOR_WEIGHT" PropertyType="float" />
+                    <cdm:PropertyMeta Name="SEQUENCE" PropertyType="int" />
+                    <cdm:PropertyMeta Name="ORDER_TYPE" PropertyType="string" />
+                    <cdm:PropertyMeta Name="CRITERIA" PropertyType="string" />
+                  </Properties>
+                </cdm:DataMetaInfo>
+              </MetaInfo>
+              <ActiveAction>
+                <cdd:DataAction Name="Default" DataSource="SourceDB" IsAdapters="False" def:name="PresetInfo_Default">
+                  <Commands>
+                    <cdd:DataCommand Name="Cmd1" IsBindTable="True" />
+                  </Commands>
+                </cdd:DataAction>
+              </ActiveAction>
+              <Actions>
+                <cdd:DataAction ref:name="PresetInfo_Default" />
+              </Actions>
+            </cdd:DataItem>
+          </cdd:DataItem-Array>
+        </ItemArray>
+      </Inputs>
+      <Outputs Name="Outputs">
+        <ItemArray>
+          <cdd:DataItem-Array>
+            <cdd:DataItem Name="PegHistory" Category="PegResult">
+              <MetaInfo>
+                <cdm:DataMetaInfo Name="PegHistory">
+                  <Properties>
+                    <cdm:PropertyMeta Name="a" PropertyType="string" />
+                  </Properties>
+                </cdm:DataMetaInfo>
+              </MetaInfo>
+              <ActiveAction>
+                <cdd:DataAction Name="Default" DataSource="SourceDB" IsAdapters="False" def:name="PegHistory_Default">
+                  <Commands>
+                    <cdd:DataCommand Name="Cmd1" IsBindTable="True" />
+                  </Commands>
+                </cdd:DataAction>
+              </ActiveAction>
+              <Actions>
+                <cdd:DataAction ref:name="PegHistory_Default" />
+              </Actions>
+            </cdd:DataItem>
+            <cdd:DataItem Name="InputPlan" Category="PegResult">
+              <MetaInfo>
+                <cdm:DataMetaInfo Name="InputPlan">
+                  <Properties>
+                    <cdm:PropertyMeta Name="a" PropertyType="string" />
+                  </Properties>
+                </cdm:DataMetaInfo>
+              </MetaInfo>
+              <ActiveAction>
+                <cdd:DataAction Name="Default" DataSource="SourceDB" IsAdapters="False" def:name="InputPlan_Default">
+                  <Commands>
+                    <cdd:DataCommand Name="Cmd1" IsBindTable="True" />
+                  </Commands>
+                </cdd:DataAction>
+              </ActiveAction>
+              <Actions>
+                <cdd:DataAction ref:name="InputPlan_Default" />
+              </Actions>
+            </cdd:DataItem>
+            <cdd:DataItem Name="StepTarget" Category="PegResult">
+              <MetaInfo>
+                <cdm:DataMetaInfo Name="StepTarget">
+                  <Properties>
+                    <cdm:PropertyMeta Name="a" PropertyType="string" />
+                  </Properties>
+                </cdm:DataMetaInfo>
+              </MetaInfo>
+              <ActiveAction>
+                <cdd:DataAction Name="Default" DataSource="SourceDB" IsAdapters="False" def:name="StepTarget_Default">
+                  <Commands>
+                    <cdd:DataCommand Name="Cmd1" IsBindTable="True" />
+                  </Commands>
+                </cdd:DataAction>
+              </ActiveAction>
+              <Actions>
+                <cdd:DataAction ref:name="StepTarget_Default" />
+              </Actions>
+            </cdd:DataItem>
+            <cdd:DataItem Name="UnpegHistory" Category="PegResult">
+              <MetaInfo>
+                <cdm:DataMetaInfo Name="UnpegHistory">
+                  <Properties>
+                    <cdm:PropertyMeta Name="a" PropertyType="string" />
+                  </Properties>
+                </cdm:DataMetaInfo>
+              </MetaInfo>
+              <ActiveAction>
+                <cdd:DataAction Name="Default" DataSource="SourceDB" IsAdapters="False" def:name="UnpegHistory_Default">
+                  <Commands>
+                    <cdd:DataCommand Name="Cmd1" IsBindTable="True" />
+                  </Commands>
+                </cdd:DataAction>
+              </ActiveAction>
+              <Actions>
+                <cdd:DataAction ref:name="UnpegHistory_Default" />
+              </Actions>
+            </cdd:DataItem>
+            <cdd:DataItem Name="EqpPlan" Category="SimResult">
+              <MetaInfo>
+                <cdm:DataMetaInfo Name="EqpPlan">
+                  <Properties>
+                    <cdm:PropertyMeta Name="LINE_ID" PropertyType="string" IsPrimaryKey="True" />
+                    <cdm:PropertyMeta Name="EQP_ID" PropertyType="string" IsPrimaryKey="True" />
+                    <cdm:PropertyMeta Name="LOT_ID" PropertyType="string" IsPrimaryKey="True" />
+                    <cdm:PropertyMeta Name="PRODUCT_ID" PropertyType="string" />
+                    <cdm:PropertyMeta Name="PROCESS_ID" PropertyType="string" />
+                    <cdm:PropertyMeta Name="STEP_ID" PropertyType="string" IsPrimaryKey="True" />
+                    <cdm:PropertyMeta Name="LOT_QTY" PropertyType="int" />
+                    <cdm:PropertyMeta Name="START_TIME" PropertyType="DateTime" />
+                    <cdm:PropertyMeta Name="END_TIME" PropertyType="DateTime" Description=" " />
+                    <cdm:PropertyMeta Name="PROC_TIME" PropertyType="double" />
+                  </Properties>
+                </cdm:DataMetaInfo>
+              </MetaInfo>
+              <ActiveAction>
+                <cdd:DataAction Name="Default" DataSource="SourceDB" IsAdapters="False" def:name="EqpPlan_Default">
+                  <Commands>
+                    <cdd:DataCommand Name="Cmd1" IsBindTable="True" />
+                  </Commands>
+                </cdd:DataAction>
+              </ActiveAction>
+              <Actions>
+                <cdd:DataAction ref:name="EqpPlan_Default" />
+              </Actions>
+            </cdd:DataItem>
+            <cdd:DataItem Name="LoadStat" Category="SimResult">
+              <MetaInfo>
+                <cdm:DataMetaInfo Name="LoadStat">
+                  <Properties>
+                    <cdm:PropertyMeta Name="LINE_ID" PropertyType="string" IsPrimaryKey="True" />
+                    <cdm:PropertyMeta Name="EQP_GROUP" PropertyType="string" />
+                    <cdm:PropertyMeta Name="EQP_ID" PropertyType="string" IsPrimaryKey="True" />
+                    <cdm:PropertyMeta Name="TARGET_DATE" PropertyType="string" IsPrimaryKey="True" />
+                    <cdm:PropertyMeta Name="SETUP" PropertyType="decimal" />
+                    <cdm:PropertyMeta Name="BUSY" PropertyType="decimal" />
+                    <cdm:PropertyMeta Name="IDLERUN" PropertyType="decimal" />
+                    <cdm:PropertyMeta Name="IDLE" PropertyType="decimal" />
+                    <cdm:PropertyMeta Name="PM" PropertyType="decimal" />
+                    <cdm:PropertyMeta Name="DOWN" PropertyType="decimal" />
+                  </Properties>
+                </cdm:DataMetaInfo>
+              </MetaInfo>
+              <ActiveAction>
+                <cdd:DataAction Name="Default" DataSource="SourceDB" IsAdapters="False" def:name="LoadStat_Default">
+                  <Commands>
+                    <cdd:DataCommand Name="Cmd1" IsBindTable="True" />
+                  </Commands>
+                </cdd:DataAction>
+              </ActiveAction>
+              <Actions>
+                <cdd:DataAction ref:name="LoadStat_Default" />
+              </Actions>
+            </cdd:DataItem>
+            <cdd:DataItem Name="LoadHistory" Category="SimResult">
+              <MetaInfo>
+                <cdm:DataMetaInfo Name="LoadHistory">
+                  <Properties>
+                    <cdm:PropertyMeta Name="LINE_ID" PropertyType="string" IsPrimaryKey="True" />
+                    <cdm:PropertyMeta Name="EQP_ID" PropertyType="string" IsPrimaryKey="True" />
+                    <cdm:PropertyMeta Name="TARGET_DATE" PropertyType="string" IsPrimaryKey="True" />
+                    <cdm:PropertyMeta Name="INFO_GZIP" PropertyType="string" />
+                    <cdm:PropertyMeta Name="INFO_GZIP2" PropertyType="string" />
+                    <cdm:PropertyMeta Name="INFO_GZIP3" PropertyType="string" />
+                  </Properties>
+                </cdm:DataMetaInfo>
+              </MetaInfo>
+              <ActiveAction>
+                <cdd:DataAction Name="Default" DataSource="SourceDB" IsAdapters="False" def:name="LoadHistory_Default">
+                  <Commands>
+                    <cdd:DataCommand Name="Cmd1" IsBindTable="True" />
+                  </Commands>
+                </cdd:DataAction>
+              </ActiveAction>
+              <Actions>
+                <cdd:DataAction ref:name="LoadHistory_Default" />
+              </Actions>
+            </cdd:DataItem>
+            <cdd:DataItem Name="ReleaseHistory" Category="SimResult">
+              <MetaInfo>
+                <cdm:DataMetaInfo Name="ReleaseHistory" Description="Simulation 시점에 INPUT_PLAN 기반으로 생성되고 투입된 Lot의 이력 정보">
+                  <Properties>
+                    <cdm:PropertyMeta Name="ㅁ" PropertyType="string" />
+                  </Properties>
+                </cdm:DataMetaInfo>
+              </MetaInfo>
+              <ActiveAction>
+                <cdd:DataAction Name="Default" DataSource="SourceDB" IsAdapters="False" def:name="ReleaseHistory_Default">
+                  <Commands>
+                    <cdd:DataCommand Name="Cmd1" IsBindTable="True" />
+                  </Commands>
+                </cdd:DataAction>
+              </ActiveAction>
+              <Actions>
+                <cdd:DataAction ref:name="ReleaseHistory_Default" />
+              </Actions>
+            </cdd:DataItem>
+            <cdd:DataItem Name="ErrorHistory" Category="Log">
+              <MetaInfo>
+                <cdm:DataMetaInfo Name="ErrorHistory">
+                  <Properties>
+                    <cdm:PropertyMeta Name="ERROR_TYPE" PropertyType="string" Description="INFORM, WARNING, ERROR" IsPrimaryKey="True" />
+                    <cdm:PropertyMeta Name="CATEGORY" PropertyType="string" Description="WIP, BOP.." IsPrimaryKey="True" />
+                    <cdm:PropertyMeta Name="ITEM" PropertyType="string" IsPrimaryKey="True" />
+                    <cdm:PropertyMeta Name="REASON" PropertyType="string" />
+                  </Properties>
+                </cdm:DataMetaInfo>
+              </MetaInfo>
+              <ActiveAction>
+                <cdd:DataAction Name="Default" DataSource="SourceDB" IsAdapters="False" def:name="ErrorHistory_Default">
+                  <Commands>
+                    <cdd:DataCommand Name="Cmd1" IsBindTable="True" />
+                  </Commands>
+                </cdd:DataAction>
+              </ActiveAction>
+              <Actions>
+                <cdd:DataAction ref:name="ErrorHistory_Default" />
+              </Actions>
+            </cdd:DataItem>
+            <cdd:DataItem Name="DispatchLog" Category="SimResult">
+              <MetaInfo>
+                <cdm:DataMetaInfo Name="DispatchLog">
+                  <Properties>
+                    <cdm:PropertyMeta Name="LINE_ID" PropertyType="string" />
+                    <cdm:PropertyMeta Name="EQP_ID" PropertyType="string" />
+                    <cdm:PropertyMeta Name="DISPATCHING_TIME" PropertyType="string" />
+                    <cdm:PropertyMeta Name="INIT_WIP_CNT" PropertyType="string" />
+                    <cdm:PropertyMeta Name="FILTERED_WIP_CNT" PropertyType="string" />
+                    <cdm:PropertyMeta Name="SELECTED_WIP_CNT" PropertyType="string" />
+                    <cdm:PropertyMeta Name="SELECTED_WIP" PropertyType="string" />
+                    <cdm:PropertyMeta Name="FILTERED_WIP_LOG" PropertyType="string" />
+                    <cdm:PropertyMeta Name="DISPATCH_WIP_LOG" PropertyType="string" />
+                    <cdm:PropertyMeta Name="PRESET_ID" PropertyType="string" />
+                  </Properties>
+                </cdm:DataMetaInfo>
+              </MetaInfo>
+              <ActiveAction>
+                <cdd:DataAction Name="Default" DataSource="SourceDB" IsAdapters="False" def:name="DispatchLog_Default">
+                  <Commands>
+                    <cdd:DataCommand Name="Cmd1" IsBindTable="True" />
+                  </Commands>
+                </cdd:DataAction>
+              </ActiveAction>
+              <Actions>
+                <cdd:DataAction ref:name="DispatchLog_Default" />
+              </Actions>
+            </cdd:DataItem>
+          </cdd:DataItem-Array>
+        </ItemArray>
+      </Outputs>
+      <DataSources>
+        <Items>
+          <Entry>
+            <String>SourceDB</String>
+            <cdd:DataSource Name="SourceDB" Description="">
+              <Items Capacity="4">
+                <cdd:DataSourceItem Name="default" ProviderName="SqlServer" ConnectionString="Database=MozartEdu;Data Source=192.168.1.25\mozart;User ID=moztest;Password=@qmdldpa2000;" />
+              </Items>
+            </cdd:DataSource>
+          </Entry>
+          <Entry>
+            <String>TargetDB</String>
+            <cdd:DataSource Name="TargetDB" Description="">
+              <Items Capacity="4">
+                <cdd:DataSourceItem Name="TargetDB" ProviderName="SqlServer" ConnectionString="Database=MozartSandBox;Data Source=192.168.1.25\mozart;User ID=moztest;Password=@qmdldpa2000;" />
+              </Items>
+            </cdd:DataSource>
+          </Entry>
+        </Items>
+      </DataSources>
+      <PersistInput>
+        <RootItem AutoBatch="True" IsPerformance="True" Name="Inputs" Description="Input loading">
+          <Items Capacity="6">
+            <GroupItem IsPerformance="True" IsPreloading="True" Name="* Preloading *" />
+            <GroupItem IsPerformance="True" Name="EXECUTION Persists">
+              <Items Capacity="4">
+                <EntityItem IsPerformance="True" Name="Config" />
+                <EntityItem IsPerformance="True" Name="ExcutionOpertion" />
+                <EntityItem IsPerformance="True" OnAfterLoadItem="OnAfterLoad_PresetInfo" Name="PresetInfo" />
+              </Items>
+            </GroupItem>
+            <GroupItem IsPerformance="True" Name="BOP Persists">
+              <Items Capacity="7">
+                <EntityItem IsPerformance="True" Name="ProcStep" />
+                <EntityItem IsPerformance="True" OnAfterLoadItem="OnAfterLoad_Process" Name="Process" />
+                <EntityItem IsPerformance="True" OnAfterLoadItem="OnAfterLoad_Product" Name="Product" />
+                <EntityItem IsPerformance="True" Name="StdStep" />
+                <EntityItem IsPerformance="True" Name="ProductRoute" />
+                <EntityItem IsPerformance="True" Name="StepTAT" />
+                <EntityItem IsPerformance="True" Name="StepYield" />
+              </Items>
+            </GroupItem>
+            <GroupItem IsPerformance="True" Name="RESOURCE Persists">
+              <Items Capacity="3">
+                <EntityItem IsPerformance="True" OnAfterLoadItem="OnAfterLoad_Equipment" Name="Equipment" />
+                <EntityItem IsPerformance="True" OnAfterLoadItem="OnAfterLoad_EqpArrange" Name="EqpArrange" />
+                <EntityItem IsPerformance="True" Name="LineInfo" />
+              </Items>
+            </GroupItem>
+            <GroupItem IsPerformance="True" Name="WIP Persists">
+              <Items Capacity="1">
+                <EntityItem IsPerformance="True" OnAfterLoadItem="OnAfterLoad_Wip" Name="Wip" />
+              </Items>
+            </GroupItem>
+            <GroupItem IsPerformance="True" Name="TARGET Persists">
+              <Items Capacity="1">
+                <EntityItem IsPerformance="True" Name="Demand" />
+              </Items>
+            </GroupItem>
+          </Items>
+        </RootItem>
+      </PersistInput>
+    </VModelDoc>
+  </Content>
+</vxml:Document>
